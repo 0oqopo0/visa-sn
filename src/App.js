@@ -41,9 +41,9 @@ const App = () => {
                 style={{
                   background: currentColor,
                   borderRadius: "50%",
-                  marginRight: "3rem",
+                  marginRight: "1rem",
                 }}
-                className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
+                className="text-4xl text-gray-800 p-1 hover:drop-shadow-xl hover:bg-light-gray"
               >
                 <FiSettings />
               </button>
