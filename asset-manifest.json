@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/visa-sn/static/css/main.3f275b12.css",
+    "main.js": "/visa-sn/static/js/main.1cc7f796.js",
+    "static/media/beachVid.mp4": "/visa-sn/static/media/beachVid.aaafa1c17fc79e9a6d45.mp4",
+    "index.html": "/visa-sn/index.html",
+    "main.3f275b12.css.map": "/visa-sn/static/css/main.3f275b12.css.map",
+    "main.1cc7f796.js.map": "/visa-sn/static/js/main.1cc7f796.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3f275b12.css",
+    "static/js/main.1cc7f796.js"
+  ]
+}
