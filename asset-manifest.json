@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/visa-sn/static/css/main.d048edd8.css",
-    "main.js": "/visa-sn/static/js/main.64bbbe6a.js",
+    "main.css": "/visa-sn/static/css/main.f4bba5c6.css",
+    "main.js": "/visa-sn/static/js/main.d8ffeeaf.js",
     "static/media/beachVid.mp4": "/visa-sn/static/media/beachVid.aaafa1c17fc79e9a6d45.mp4",
     "index.html": "/visa-sn/index.html",
-    "main.d048edd8.css.map": "/visa-sn/static/css/main.d048edd8.css.map",
-    "main.64bbbe6a.js.map": "/visa-sn/static/js/main.64bbbe6a.js.map"
+    "main.f4bba5c6.css.map": "/visa-sn/static/css/main.f4bba5c6.css.map",
+    "main.d8ffeeaf.js.map": "/visa-sn/static/js/main.d8ffeeaf.js.map"
   },
   "entrypoints": [
-    "static/css/main.d048edd8.css",
-    "static/js/main.64bbbe6a.js"
+    "static/css/main.f4bba5c6.css",
+    "static/js/main.d8ffeeaf.js"
   ]
 }
