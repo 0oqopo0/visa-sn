@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/visa-sn/static/css/main.a2d69bbb.css",
-    "main.js": "/visa-sn/static/js/main.8d5643bb.js",
+    "main.css": "/visa-sn/static/css/main.9f4f5476.css",
+    "main.js": "/visa-sn/static/js/main.33e9a9d6.js",
     "static/media/beachVid.mp4": "/visa-sn/static/media/beachVid.aaafa1c17fc79e9a6d45.mp4",
     "static/media/Mount.jpg": "/visa-sn/static/media/Mount.219c36b3566400613498.jpg",
     "static/media/Earth.jpg": "/visa-sn/static/media/Earth.ca5c52d7623cb84e20e4.jpg",
     "index.html": "/visa-sn/index.html",
-    "main.a2d69bbb.css.map": "/visa-sn/static/css/main.a2d69bbb.css.map",
-    "main.8d5643bb.js.map": "/visa-sn/static/js/main.8d5643bb.js.map"
+    "main.9f4f5476.css.map": "/visa-sn/static/css/main.9f4f5476.css.map",
+    "main.33e9a9d6.js.map": "/visa-sn/static/js/main.33e9a9d6.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2d69bbb.css",
-    "static/js/main.8d5643bb.js"
+    "static/css/main.9f4f5476.css",
+    "static/js/main.33e9a9d6.js"
   ]
 }
