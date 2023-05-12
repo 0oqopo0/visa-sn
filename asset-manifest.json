@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/visa-sn/static/css/main.ca561afc.css",
-    "main.js": "/visa-sn/static/js/main.ecb66895.js",
+    "main.css": "/visa-sn/static/css/main.634370e4.css",
+    "main.js": "/visa-sn/static/js/main.cfee3201.js",
     "static/media/beachVid.mp4": "/visa-sn/static/media/beachVid.aaafa1c17fc79e9a6d45.mp4",
     "static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.jpg": "/visa-sn/static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.3e4c41de3340aae7050e.jpg",
     "static/media/WhatIsEmbassyAppointment.jpg": "/visa-sn/static/media/WhatIsEmbassyAppointment.cb33d272e60f661c9c95.jpg",
@@ -11,11 +11,11 @@
     "static/media/Mount.jpg": "/visa-sn/static/media/Mount.219c36b3566400613498.jpg",
     "static/media/Earth.jpg": "/visa-sn/static/media/Earth.ca5c52d7623cb84e20e4.jpg",
     "index.html": "/visa-sn/index.html",
-    "main.ca561afc.css.map": "/visa-sn/static/css/main.ca561afc.css.map",
-    "main.ecb66895.js.map": "/visa-sn/static/js/main.ecb66895.js.map"
+    "main.634370e4.css.map": "/visa-sn/static/css/main.634370e4.css.map",
+    "main.cfee3201.js.map": "/visa-sn/static/js/main.cfee3201.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca561afc.css",
-    "static/js/main.ecb66895.js"
+    "static/css/main.634370e4.css",
+    "static/js/main.cfee3201.js"
   ]
 }
