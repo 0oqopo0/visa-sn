@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/visa-sn/static/css/main.6a83a323.css",
-    "main.js": "/visa-sn/static/js/main.14621693.js",
+    "main.css": "/visa-sn/static/css/main.4c3b21e6.css",
+    "main.js": "/visa-sn/static/js/main.862f4b6f.js",
     "static/media/beachVid.mp4": "/visa-sn/static/media/beachVid.aaafa1c17fc79e9a6d45.mp4",
     "static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.jpg": "/visa-sn/static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.3e4c41de3340aae7050e.jpg",
     "static/media/Italy_Sea_Houses_Roads_Atrani_612044_1280x853.jpg": "/visa-sn/static/media/Italy_Sea_Houses_Roads_Atrani_612044_1280x853.c22a042cbf5f16ca2d64.jpg",
@@ -18,11 +18,11 @@
     "static/media/Mount.jpg": "/visa-sn/static/media/Mount.219c36b3566400613498.jpg",
     "static/media/Earth.jpg": "/visa-sn/static/media/Earth.ca5c52d7623cb84e20e4.jpg",
     "index.html": "/visa-sn/index.html",
-    "main.6a83a323.css.map": "/visa-sn/static/css/main.6a83a323.css.map",
-    "main.14621693.js.map": "/visa-sn/static/js/main.14621693.js.map"
+    "main.4c3b21e6.css.map": "/visa-sn/static/css/main.4c3b21e6.css.map",
+    "main.862f4b6f.js.map": "/visa-sn/static/js/main.862f4b6f.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a83a323.css",
-    "static/js/main.14621693.js"
+    "static/css/main.4c3b21e6.css",
+    "static/js/main.862f4b6f.js"
   ]
 }
