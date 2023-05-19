@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/visa-sn/static/css/main.6c6cc31c.css",
-    "main.js": "/visa-sn/static/js/main.57c87a81.js",
+    "main.css": "/visa-sn/static/css/main.f24de419.css",
+    "main.js": "/visa-sn/static/js/main.d6ce5545.js",
     "static/media/beachVid.mp4": "/visa-sn/static/media/beachVid.aaafa1c17fc79e9a6d45.mp4",
     "static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.jpg": "/visa-sn/static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.3e4c41de3340aae7050e.jpg",
     "static/media/Italy_Sea_Houses_Roads_Atrani_612044_1280x853.jpg": "/visa-sn/static/media/Italy_Sea_Houses_Roads_Atrani_612044_1280x853.c22a042cbf5f16ca2d64.jpg",
@@ -13,9 +13,9 @@
     "static/media/Canada_Mountains_Lake_Parks_Boats_Moraine_Lake_615069_1280x800.jpg": "/visa-sn/static/media/Canada_Mountains_Lake_Parks_Boats_Moraine_Lake_615069_1280x800.7d3010aeeadb0ad0ee7b.jpg",
     "static/media/Canada_Rivers_Bridges_Houses_Parliament_Hill_610221_1280x886.jpg": "/visa-sn/static/media/Canada_Rivers_Bridges_Houses_Parliament_Hill_610221_1280x886.87e87a9c62fd5e83440a.jpg",
     "static/media/Brazil_Houses_Christ_the_Redeemer_Rio_de_Janeiro_570115_1280x853.jpg": "/visa-sn/static/media/Brazil_Houses_Christ_the_Redeemer_Rio_de_Janeiro_570115_1280x853.5d9d9de56a87947d22e3.jpg",
+    "static/media/USA_Bridges_golden_bridge_San_Francisco_614954_1280x853.jpg": "/visa-sn/static/media/USA_Bridges_golden_bridge_San_Francisco_614954_1280x853.7359c4760d24db7b9986.jpg",
     "static/media/USA_Evening_Houses_Sculptures_United_States_598081_1280x853.jpg": "/visa-sn/static/media/USA_Evening_Houses_Sculptures_United_States_598081_1280x853.f9a50d730777c8db4b4c.jpg",
     "static/media/aleni.jpg": "/visa-sn/static/media/aleni.97b3b361067bed5d7759.jpg",
-    "static/media/USA_Houses_Skyscrapers_Evening_Florida_614777_1280x480.jpg": "/visa-sn/static/media/USA_Houses_Skyscrapers_Evening_Florida_614777_1280x480.08eda39153ad9b9eb224.jpg",
     "static/media/melisenta.jpg": "/visa-sn/static/media/melisenta.3557106973b8bfe26623.jpg",
     "static/media/Mount.jpg": "/visa-sn/static/media/Mount.219c36b3566400613498.jpg",
     "static/media/Earth.jpg": "/visa-sn/static/media/Earth.ca5c52d7623cb84e20e4.jpg",
@@ -29,11 +29,11 @@
     "static/media/MjSiliconBold.ttf": "/visa-sn/static/media/MjSiliconBold.35f5c8a6f103f27cb949.ttf",
     "static/media/FontMJCurves.ttf": "/visa-sn/static/media/FontMJCurves.52b60dc797a9d2fc9d2c.ttf",
     "index.html": "/visa-sn/index.html",
-    "main.6c6cc31c.css.map": "/visa-sn/static/css/main.6c6cc31c.css.map",
-    "main.57c87a81.js.map": "/visa-sn/static/js/main.57c87a81.js.map"
+    "main.f24de419.css.map": "/visa-sn/static/css/main.f24de419.css.map",
+    "main.d6ce5545.js.map": "/visa-sn/static/js/main.d6ce5545.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c6cc31c.css",
-    "static/js/main.57c87a81.js"
+    "static/css/main.f24de419.css",
+    "static/js/main.d6ce5545.js"
   ]
 }
