@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/visa-sn/static/css/main.f24de419.css",
-    "main.js": "/visa-sn/static/js/main.d6ce5545.js",
+    "main.css": "/visa-sn/static/css/main.5af65dac.css",
+    "main.js": "/visa-sn/static/js/main.7f51df82.js",
     "static/media/beachVid.mp4": "/visa-sn/static/media/beachVid.aaafa1c17fc79e9a6d45.mp4",
     "static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.jpg": "/visa-sn/static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.3e4c41de3340aae7050e.jpg",
     "static/media/Italy_Sea_Houses_Roads_Atrani_612044_1280x853.jpg": "/visa-sn/static/media/Italy_Sea_Houses_Roads_Atrani_612044_1280x853.c22a042cbf5f16ca2d64.jpg",
@@ -21,19 +21,23 @@
     "static/media/Earth.jpg": "/visa-sn/static/media/Earth.ca5c52d7623cb84e20e4.jpg",
     "static/media/Mj_Annab.ttf": "/visa-sn/static/media/Mj_Annab.926abd16ba9b3ff24fdc.ttf",
     "static/media/Sols.ttf": "/visa-sn/static/media/Sols.6fc24123ee35c604dbf8.ttf",
+    "static/media/BKamranOutline.ttf": "/visa-sn/static/media/BKamranOutline.1a8bc8cb1868ab578099.ttf",
     "static/media/MjSusan.ttf": "/visa-sn/static/media/MjSusan.2a93f78b593a700dcb2c.ttf",
     "static/media/MjSiliconOutline.ttf": "/visa-sn/static/media/MjSiliconOutline.cfa5ac2018a7a883ff29.ttf",
+    "static/media/BKamran.ttf": "/visa-sn/static/media/BKamran.f5f44e7d60b185886185.ttf",
     "static/media/MjSilicon.ttf": "/visa-sn/static/media/MjSilicon.10b8e6da73a93d5220af.ttf",
+    "static/media/BKamranBold.ttf": "/visa-sn/static/media/BKamranBold.06fbe0db6300c5f4851d.ttf",
+    "static/media/BMehrBold.ttf": "/visa-sn/static/media/BMehrBold.845a31dcdd34df89040f.ttf",
     "static/media/MjSiliconWideItalic.ttf": "/visa-sn/static/media/MjSiliconWideItalic.84ed095ee0b9deb50055.ttf",
     "static/media/Mj_Nadine.ttf": "/visa-sn/static/media/Mj_Nadine.1eec1a75ae0a3f5d472a.ttf",
     "static/media/MjSiliconBold.ttf": "/visa-sn/static/media/MjSiliconBold.35f5c8a6f103f27cb949.ttf",
     "static/media/FontMJCurves.ttf": "/visa-sn/static/media/FontMJCurves.52b60dc797a9d2fc9d2c.ttf",
     "index.html": "/visa-sn/index.html",
-    "main.f24de419.css.map": "/visa-sn/static/css/main.f24de419.css.map",
-    "main.d6ce5545.js.map": "/visa-sn/static/js/main.d6ce5545.js.map"
+    "main.5af65dac.css.map": "/visa-sn/static/css/main.5af65dac.css.map",
+    "main.7f51df82.js.map": "/visa-sn/static/js/main.7f51df82.js.map"
   },
   "entrypoints": [
-    "static/css/main.f24de419.css",
-    "static/js/main.d6ce5545.js"
+    "static/css/main.5af65dac.css",
+    "static/js/main.7f51df82.js"
   ]
 }
