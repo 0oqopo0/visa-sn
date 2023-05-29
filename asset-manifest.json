@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/visa-sn/static/css/main.bccec332.css",
-    "main.js": "/visa-sn/static/js/main.4dd2a10b.js",
+    "main.css": "/visa-sn/static/css/main.2c412ab1.css",
+    "main.js": "/visa-sn/static/js/main.4fc46508.js",
     "static/media/nature_105936_720p.mp4": "/visa-sn/static/media/nature_105936_720p.d8b2cd89040010c832a5.mp4",
     "static/media/Nature_159101.mp4": "/visa-sn/static/media/Nature_159101.77e2211740442a140c4d.mp4",
     "static/media/beachVid.mp4": "/visa-sn/static/media/beachVid.aaafa1c17fc79e9a6d45.mp4",
+    "static/media/Gabriola.ttf": "/visa-sn/static/media/Gabriola.88ea98efc0d476a13db1.ttf",
     "static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.jpg": "/visa-sn/static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.3e4c41de3340aae7050e.jpg",
     "static/media/Italy_Sea_Houses_Roads_Atrani_612044_1280x853.jpg": "/visa-sn/static/media/Italy_Sea_Houses_Roads_Atrani_612044_1280x853.c22a042cbf5f16ca2d64.jpg",
     "static/media/England_Houses_Ashridge_Estate_From_above_615306_1280x852.jpg": "/visa-sn/static/media/England_Houses_Ashridge_Estate_From_above_615306_1280x852.41ec061cc91708e4d5fa.jpg",
@@ -27,19 +28,21 @@
     "static/media/MjSusan.ttf": "/visa-sn/static/media/MjSusan.2a93f78b593a700dcb2c.ttf",
     "static/media/MjSiliconOutline.ttf": "/visa-sn/static/media/MjSiliconOutline.cfa5ac2018a7a883ff29.ttf",
     "static/media/BKamran.ttf": "/visa-sn/static/media/BKamran.f5f44e7d60b185886185.ttf",
+    "static/media/B Farnaz.ttf": "/visa-sn/static/media/B Farnaz.301360962f5cfb2acf8b.ttf",
     "static/media/MjSilicon.ttf": "/visa-sn/static/media/MjSilicon.10b8e6da73a93d5220af.ttf",
     "static/media/BKamranBold.ttf": "/visa-sn/static/media/BKamranBold.06fbe0db6300c5f4851d.ttf",
+    "static/media/B Homa.ttf": "/visa-sn/static/media/B Homa.578e079ba30c60b4a146.ttf",
     "static/media/BMehrBold.ttf": "/visa-sn/static/media/BMehrBold.845a31dcdd34df89040f.ttf",
     "static/media/MjSiliconWideItalic.ttf": "/visa-sn/static/media/MjSiliconWideItalic.84ed095ee0b9deb50055.ttf",
     "static/media/Mj_Nadine.ttf": "/visa-sn/static/media/Mj_Nadine.1eec1a75ae0a3f5d472a.ttf",
     "static/media/MjSiliconBold.ttf": "/visa-sn/static/media/MjSiliconBold.35f5c8a6f103f27cb949.ttf",
     "static/media/FontMJCurves.ttf": "/visa-sn/static/media/FontMJCurves.52b60dc797a9d2fc9d2c.ttf",
     "index.html": "/visa-sn/index.html",
-    "main.bccec332.css.map": "/visa-sn/static/css/main.bccec332.css.map",
-    "main.4dd2a10b.js.map": "/visa-sn/static/js/main.4dd2a10b.js.map"
+    "main.2c412ab1.css.map": "/visa-sn/static/css/main.2c412ab1.css.map",
+    "main.4fc46508.js.map": "/visa-sn/static/js/main.4fc46508.js.map"
   },
   "entrypoints": [
-    "static/css/main.bccec332.css",
-    "static/js/main.4dd2a10b.js"
+    "static/css/main.2c412ab1.css",
+    "static/js/main.4fc46508.js"
   ]
 }
