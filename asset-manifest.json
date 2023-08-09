@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/visa-sn/static/css/main.ed8ef16e.css",
-    "main.js": "/visa-sn/static/js/main.5cb25d5d.js",
+    "main.js": "/visa-sn/static/js/main.360a682a.js",
     "static/media/nature_105936_720p.mp4": "/visa-sn/static/media/nature_105936_720p.d8b2cd89040010c832a5.mp4",
     "static/media/sunrise.mp4": "/visa-sn/static/media/sunrise.d2cc4115de6c0581f9a6.mp4",
     "static/media/Nature_159101.mp4": "/visa-sn/static/media/Nature_159101.77e2211740442a140c4d.mp4",
@@ -46,10 +46,10 @@
     "static/media/FontMJCurves.ttf": "/visa-sn/static/media/FontMJCurves.52b60dc797a9d2fc9d2c.ttf",
     "index.html": "/visa-sn/index.html",
     "main.ed8ef16e.css.map": "/visa-sn/static/css/main.ed8ef16e.css.map",
-    "main.5cb25d5d.js.map": "/visa-sn/static/js/main.5cb25d5d.js.map"
+    "main.360a682a.js.map": "/visa-sn/static/js/main.360a682a.js.map"
   },
   "entrypoints": [
     "static/css/main.ed8ef16e.css",
-    "static/js/main.5cb25d5d.js"
+    "static/js/main.360a682a.js"
   ]
 }
