@@ -102,9 +102,10 @@ console.log("isOpen : " + isOpen);
     
       {/* <div className="flex  bg-green-300/30 w-full text-white m-1" onClick={toggleMenu}> */}
       {/* <div className="flex pr-3 text-lg gap-2  justify-end items-center  border-b-2 border-b-[#395B64]  bg-[#396444]  rounded-r-lg  m-1" onClick={toggleMenu}> */}
-      <div className="flex pr-3 text-lg gap-2  justify-end items-center  border-b-2 border-black  bg-[#18291c] rounded-r-sm duration-1000 text-white p-1.5 md:p-2.5 lg:p-2.5 mr-1 mb-0.5" onClick={toggleMenu}>
       {/* <div className="m-1  w-full  ark:bg-black/80 text-2xl  dark:bg-black/50 text-black dark:text-white  flex items-center justify-between gap-3    text-md  rounded-sm  border-t-1 border-t-gray-500  duration-1000  shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] p-3.5" onClick={toggleMenu}> */}
       {/* <div className="m-1  w-full  bg-red-400 text-2xl  dark:bg-black/50 text-black dark:text-white  flex items-center justify-between gap-3  mb-1  text-md  rounded-sm  border-t-1 border-red-500  duration-500  p-3.5" onClick={toggleMenu}> */}
+      {/* <div className="flex pr-3 text-lg gap-2  justify-end items-center  border-b-2 border-black  bg-[#18291c]/70 rounded-r-sm duration-1000 text-white p-1.5 md:p-2.5 lg:p-2.5 mr-1 ml-2 mb-0.5" onClick={toggleMenu}> */}
+      <div className="flex pr-3 text-lg gap-2  justify-end items-center  border-b-2 border-black  bg-[#18291c]/70 rounded-r-sm duration-1000 text-white p-1.5 md:p-2.5 lg:p-2.5 mr-1 mb-0.5" onClick={toggleMenu}>
         <div className="flex text-xl gap-4  justify-end items-center  w-full  ">
           <AnimatePresence>
             {isOpen && (
@@ -157,10 +158,11 @@ console.log("isOpen : " + isOpen);
                 setIsOpen(false);
               }}
               >
-                <div  className=" flex  text-xl gap-2   justify-end items-center border-b-2 border-b-[#141E27] ml-1 shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] text-white p-1 mb-1 mr-1.5 ">
-                  <NavLink to={subRoute.eName} className=" flex h-full w-full text-xl gap-2  justify-end items-center border-b-2 border-b-[#141E27] rounded-sm  bg-[#060707]/60 dark:bg-[#656e61]/60 text-white p-1.5 md:p-2.5 lg:p-2.5  ">
-                    <motion.div className="dark:text-white text-black/70  ">{subRoute.pName}</motion.div>
-                    <div className="dark:text-white text-white mr-2">{subRoute.flag ?subRoute.flag : subRoute.icon}</div>
+                <div  className=" flex  text-xl gap-2   justify-end items-center    text-black pb-0.5  mr-1.5  hover:bg-green-800/40   dark:hover:bg-green-800/70">
+                  {/* <NavLink to={subRoute.eName} className=" flex h-full w-full text-xl gap-2  justify-end items-center  rounded-sm  bg-[#060707]/60 dark:bg-[#656e61]/60 text-white p-1.5 md:p-2.5 lg:p-2.5  "> */}
+                  <NavLink to={subRoute.eName} className=" flex h-full w-full text-xl gap-2  justify-end items-center  rounded-sm  bg-[#bec9cc] dark:bg-[#152D35]/50 text-white p-1.5 md:p-2.5 lg:p-2.5  ">
+                    <motion.div className="dark:text-white text-black  ">{subRoute.pName}</motion.div>
+                    <div className="dark:text-white text-black mr-2">{subRoute.flag ?subRoute.flag : subRoute.icon}</div>
                   </NavLink>
                 </div>
               </motion.div>

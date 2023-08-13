@@ -66,7 +66,7 @@ function CallButton(props) {
         // <FcCallback className="flex bottom-3 m-2 text-5xl rounded-md p-2  text-green-500/80 cursor-pointer duration-100 shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] transition ease-out-in delay-0.5  hover:-translate-x-.5 hover:scale-125 animate-pulse" />
         <CallButton className="" 
         
-                    number="+0000000000"
+                    number="+989351022875"
                     text="Call me"
                     
                   />

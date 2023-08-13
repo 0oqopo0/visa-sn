@@ -82,7 +82,7 @@ const App = () => {
   const [isOpenSocial, setIsOpenSocial, childIsOpen, setchildIsOpen] =
     useState(true);
 
-  const [contact, setContact] = useState(true);
+  const [contact, setContact] = useState(false);
   const handelContact = () => {
     setContact(true);
     setContact(!contact);
@@ -231,7 +231,8 @@ const App = () => {
                 transition={{ duration: .25, ease: "easeInOut" }}
                 style={{ zIndex: "1" }}
                 // className=" flex flex-row fixed  w-full  bottom-[5%] left-0  justify-around h-16  text-xl  items-center  text-white  rounded-tl-sm rounded-tr-sm  z-50  bg-black/80 "
-                className=" flex flex-row fixed  w-full  bottom-[10%] left-0  justify-around h-16  text-xl  items-center  text-white  rounded-tl-sm rounded-tr-sm  z-50  bg-black/80 "
+                // className=" flex flex-row fixed  w-full  bottom-[10%] left-0  justify-around h-16  text-xl  items-center  text-white  rounded-tl-sm rounded-tr-sm  z-50 bg-[#CCD5AE]/40 dark:bg-[#152D35]/70"
+                className=" flex flex-row fixed  w-full  bottom-[10%] left-0  justify-around h-16  text-xl  items-center  text-white  rounded-tl-sm rounded-tr-sm  z-50 bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80"
               >
                 <div className="flex flex-row  h-16 justify-center items-center  ">
                 {/* <div className="  "> */}

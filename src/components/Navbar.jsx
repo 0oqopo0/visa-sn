@@ -24,9 +24,7 @@ import {
 } from "../data/mobileDummyData";
 
 import { RxTextAlignBottom, RxTextAlignMiddle } from "react-icons/rx";
-import { motion as m} from "framer-motion";
-
-
+import { motion as m } from "framer-motion";
 
 const Navbar = () => {
   //--=================================================--//
@@ -47,7 +45,7 @@ const Navbar = () => {
     mobileMenu,
     setMobileMenu,
     isOpen,
-    setIsOpen
+    setIsOpen,
   } = useStateContext();
   const handleMobileMenu = () => {
     setMobileMenu(!mobileMenu);
@@ -74,7 +72,6 @@ const Navbar = () => {
     screenSize,
     contactClicked,
     setMode,
-
   } = useStateContext();
 
   useEffect(() => {
@@ -96,10 +93,10 @@ const Navbar = () => {
     }
   }, [screenSize]);
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const clearInput = () => {
-    setSearchTerm('');
+    setSearchTerm("");
   };
   const handelInputChange = () => {
     setSearchTerm(event.target.value);
@@ -119,39 +116,58 @@ const Navbar = () => {
   //--=================================================--//
   return (
     <m.div
-    initial={{y: "100%"}} animate={{y: "0%"}} transition={{duration: 0.75,ease:'backInOut' }}
-    
-    // className="flex fixed w-full justify-between items-center bg-white/90 dark:bg-black/50  px-4  z-30   h-24   border-solid  border-b-1  border-sky-500 shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]">
-    className="flex fixed w-full justify-between items-center bg-[#EEEDDE] dark:bg-[#2C3333]  px-4  z-30   h-24   border-solid  border-b-1  border-sky-500 ">
+       initial={{ y: "100%" }}
+       animate={{ y: "0%" }}
+       transition={{ duration: 0.75, ease: "backInOut" }}
+      // className="flex fixed w-full justify-between items-center bg-white/90 dark:bg-black/50  px-4  z-30   h-24   border-solid  border-b-1  border-sky-500 shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]">
+      // className="bg-[url('./Pool/Images/Earth04-64x64.jpg')] h-16 w-16 rounded-full justify-center items-center "
+      // className="flex fixed w-full justify-between items-center bg-[#CCD5AE]/20 dark:bg-[#152D35]/70  px-4  z-30   h-24   border-solid  border-b-1  border-black shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
+      className="flex fixed w-full justify-between items-center bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80  px-4  z-30   h-24   border-solid  border-b-1  border-black shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
+    >
       {/* //////////////////////////////////////////// */}
       {/* ////////////// MobileMenu BTN ////////////// */}
       {/*///////////////////////////////////////////// */}
-      <div
-      initial={{y: "80%"}} animate={{y: "0%"}} transition={{duration: 0.5,ease:'backIn' }}
-        onClick={handleMobileMenu}
-        onMouseEnter={setMobileMenu}
+      <m.div
+          initial={{ y: "80%" }}
+          animate={{ y: "0%" }}
+          transition={{ duration: 0.5, ease: "backIn" }}
+         onClick={handleMobileMenu}
+        // onMouseEnter={setMobileMenu}
         // onMouseLeave={setMobileMenu}
         // className="md:hidden  relative text-3xl rounded-full bg-red-400/30  p-2 m-2   shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
-        className="relative text-3xl   p-2 m-2  "
+        className="flex items-center justify-start relative text-3xl  p-3 rounded-full bg-black/80"
       >
         {mobileMenu ? (
+          <CgMenu className=" text-orange-400" />
+          ) : (
           <CgMenuRightAlt className=" text-red-800 " />
-        ) : (
-          <CgMenu className=" text-orange-300" />
-        )}
-      </div>
+           )}
+      </m.div>
 
       {/* //////////////////////////////////////////// */}
       {/* //////////////// MobileMenu //////////////// */}
       {/* //////////////////////////////////////////// */}
 
-
       {/* ///////////////////////////////////////////////// */}
       {/* ////////////// Search in lg TODO //////////////// */}
       {/*////////////////////////////////////////////////// */}
-      <div className="w-screen h-24">
+     <m.div className="flex  p-3 h-full w-full justify-center items-center text-2xl md:text-4xl lg:text-4xl text-gray-600 dark:text-yellow-600 font-Gabriola "
+        //  className=" absolute mt-5  rounded-md p-2 text-red-500 font-Gabriola  text-5xl "
+         initial={{x: "100%" }}
+         animate={{ x: "0%" }}
+         exit={{ opacity: 0 }}
+         transition={{ duration: 1.5, ease: "easeInOut" }}
+     >
 
-      </div>
+             <m.span 
+                      initial={{ x: "100%" }}
+                      animate={{ x: "0%" }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1.5, ease: "easeInOut" }}
+             >
+              Visa - SN
+            </m.span>
+      </m.div> 
 
       {/* ///////////////////////////////////////////////// */}
       {/* ////////////// Logo & Them Setting  ///////////// */}
@@ -182,22 +198,22 @@ const Navbar = () => {
         {/* //////////////// LoGo //////////////// */}
         {/* ////////////////////////////////////// */}
         <div className=" mr-2 p-2">
-          <div className="bg-[url('./Pool/Images/Earth04-64x64.jpg')] h-16 w-16 rounded-full justify-center items-center ">
-            <NavLink
-              to={`/`}
-              className="flex items-center  flex-col text-yellow-500 text-3xl font-Gabriola "
-              onClick={(event) => {
-                // handleDropDown();
-                setIsOpen(false);
-              }}
-            >
-               {/* <SiYourtraveldottv  /> */}
-              <span className=" absolute font-bold mt-5 text-md">
-
+          <NavLink
+            to={`/`}
+            className="flex items-center  flex-col text-yellow-500 text-3xl font-Gabriola "
+            onClick={(event) => {
+              // handleDropDown();
+              setIsOpen(false);
+            }}
+          >
+            <div className="bg-[url('./Pool/Images/Earth04-64x64.jpg')] h-16 w-16 rounded-full justify-center items-center ">
+           
+              {/* <SiYourtraveldottv  /> */}
+              {/* <span className=" absolute font-bold mt-5 text-md">
                 Visa - SN
-              </span>
-            </NavLink>
-          </div>
+              </span> * */}
+            </div>
+          </NavLink>
         </div>
 
         {/* //////////////////////////////////// */}
@@ -217,6 +233,7 @@ const Navbar = () => {
           {/* <label className="ml-2 text-md cursor-pointer">Dark Mode</label> */}
         </div>
       </div>
+
     </m.div>
   );
 };

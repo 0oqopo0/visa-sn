@@ -161,10 +161,10 @@ const Home = () => {
 
   return (
     <m.div
-      // initial={{ y: "50%" }}
-      // animate={{ y: "0%" }}
-      // exit={{ opacity: 0 }}
-      // transition={{ duration: 0.5, ease: "easeInOut" }}
+      initial={{ y: "50%" }}
+      animate={{ y: "0%" }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
       className="flex-col w-full h-full pt-0  justify-center items-start absolute  bg-slate-100 dark:bg-black "
     >
       {/* //////////////////////////////////////////////// */}
@@ -184,13 +184,15 @@ const Home = () => {
           {/* <h2 className="z-50 absolute bg-red-600 py-4">در کمترین زمان ممکن</h2> */}
         </video>
          <m.h1
-              className=" absolute mt-5  rounded-md p-2 text-red-500 font-Gabriola  text-5xl "
+              className=" absolute mt-5  rounded-md p-2 text-red-800 font-Gabriola  text-5xl "
               initial={{ x: "-100%" }}
               animate={{ x: "0%" }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
             >
-
+            <span>
+              Visa - SN
+            </span>
             </m.h1> 
       </div>
 
@@ -233,7 +235,7 @@ const Home = () => {
               {/* <h2 className="z-50 absolute bg-red-600 py-4">در کمترین زمان ممکن</h2> */}
             </video>
             <m.h1
-              className=" absolute mt-5  shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] rounded-md p-2 text-yellow-200 bg-black/20 font-Gabriola  text-3xl md:text-5xl g:text-5xl"
+              className=" absolute mt-5  shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] rounded-md p-2 text-yellow-100 bg-black/20 font-Gabriola  text-5xl"
               initial={{ x: "100%" }}
               animate={{ x: "0%" }}
               exit={{ opacity: 0 }}
@@ -257,7 +259,7 @@ const Home = () => {
                 className="flex justify-center items-center overflow-hidden  w-full"
               >
                 <m.h1
-                  className="text-1xl flex w-[80%] justify-center items-center text-yellow-700  "
+                  className="text-1xl flex w-[80%] justify-center items-center text-black  "
                   initial={{ opacity: 0, x: "100%" }}
                   animate={{ opacity: 1, x: "0%" }}
                   exit={{ opacity: 1, x: "0%" }}

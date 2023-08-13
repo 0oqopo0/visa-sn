@@ -115,7 +115,7 @@ const SideBar = ({ children }) => {
               damping: 15,
             },
           }}
-          className=" fixed mt-24 z-50  h-[65%] md:h-[70%] lg:h-[70%] text-sm bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 overflow-y-scroll  shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] rounded-br-md"
+          className=" fixed mt-24 z-50  h-[65%] md:h-[70%] lg:h-[70%] text-sm bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 overflow-y-scroll  shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
           // className=" fixed mt-24 z-50  h-[70%] bg-white text-red dark:bg-[#2C3333]/90 overflow-y-scroll rounded-br-lg "
         >
           {/* ///////////////////////////////////////////// */}
@@ -125,22 +125,37 @@ const SideBar = ({ children }) => {
             <div
               // className="dark:bg-black/80 bg-green-300/80 text-sky-300 dark:text-sky-500  flex items-center justify-between gap-3  mb-1  text-md  rounded-lg  border-1 border-gray-500  duration-1000 -mt-5"
               // className="flex mb-1 mt-2 mr-1 text-sm  bg-[#18291c]/80 text-sky-800 dark:text-sky-500  items-center justify-between gap-3   text-md  rounded-br-lg rounded-tr-lg "
-              className="flex mb-1 mt-1 mr-1  text-sm  bg-[#152D35]/50 text-sky-800 dark:text-sky-500  items-center justify-between text-md  rounded-br-md rounded-tr-md "
+              className="flex mb-1 mt-1 mr-1  text-sm  bg-[#152D35]/50 text-sky-800 dark:text-sky-500  items-center justify-between gap-3   text-md  rounded-br-lg rounded-tr-lg "
               // className=""
               // style={{ zIndex: "1000" }}
               // onClick={handleActiveSearch}
             >
-              <div className="ml-4 mt-2 mb-2 mr-2 text-sm rounded-full bg-black/90 hover:bg-gray-500/60 p-3  dark:text-red-600 "
-              onClick={clearInput}
-              >
-               
-                    <FaEraser className={searchTerm == "" ? "text-gray-700 text-3xl p-1 " : "text-sky-700 text-3xl p-1"}
-                      // onClick={clearInput}
+              <div className="ml-4 m-4 text-sm rounded-full bg-black/90 hover:bg-gray-500/60 p-2  dark:text-red-600 ">
+                {!mobileMenu ? (
+                  // <CgClose className=" text-2xl text-red-800" />
+                  // <BsSearch className=" text-2xl text-red-800" />
+                  <FaEraser
+                    className={
+                      searchTerm == "" ? "text-gray-700 text-3xl p-1" : "text-sky-400 text-3xl p-1"
+                    }
+                    onClick={clearInput}
+                  />
+                ) : (
+                  // <FaSearchLocation className="" />
+                  // <MdOutlineTravelExplore className="" />
+                  <div onClick={clearInput}>
+                    <FaEraser
+                      className={
+                        searchTerm == "" ? "text-gray-700 text-3xl p-1" : "text-sky-400 text-3xl p-1"
+                      }
+                      onClick={clearInput}
                     />
                   </div>
+                )}
+              </div>
               <input
                 dir="rtl"
-                className="w-full  bg-black/80   text-green-500 dark:text-red-500  flex items-center  text-xl md:text-2xl lg:text-2xl border-solid  border-1  border-gray-600 p-2.5 text-center mr-3 rounded-md"
+                className="w-full  bg-black/80    text-green-500 dark:text-red-500  flex items-center gap-3  text-xl md:text-2xl lg:text-2xl border-solid  border-1  border-gray-600 p-2 text-center mr-3"
                 id="searchTerm"
                 name="searchTerm"
                 value={searchTerm}

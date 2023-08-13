@@ -186,6 +186,10 @@ const EmbassyAppointment = () => {
       className="flex-col w-full h-full   justify-center items-start absolute  bg-slate-100 dark:bg-black "
     >
       <div className="mt-24 h-full w-full bg-white dark:bg-[#2C3333]  ">
+
+
+
+
         {/* //////////////////////////////////////////////// */}
         {/* ///////////////////Section One////////////////// */}
         {/* //////////////////////////////////////////////// */}
@@ -293,7 +297,7 @@ const EmbassyAppointment = () => {
             className="  flex flex-col h-full md:h-[50%] lg:h-[50%] justify-between  bg-center bg-cover duration-700 border-b-1 border-l-1 border-r-1  border-gray-600   rounded-lg text-black  dark:text-white "
             style={{
               // backgroundImage: `url(${Data[0].subItem[1].img})`,
-              backgroundImage: `url(${Data[1].subItem[3].img})`,
+              // backgroundImage: `url(${Data[1].subItem[3].img})`,
             }}
 
             // initial={{ opacity: 0, y: "10%" }}
@@ -309,7 +313,7 @@ const EmbassyAppointment = () => {
               initial={{ opacity: 0, y: "30%", x: "0%" }}
               animate={{ opacity: 1, y: "0%", x: "0%" }}
               transition={{ duration: 1.25, ease: "easeInOut" }}
-              className=" flex h-full p-5 bg-[#FAF0D7]/90 dark:bg-[#5c7979]/70 rounded-md justify-start text-justify ...  leading-10 text-black  dark:text-white font-NotoSans text-sm md:text-lg lg:text-lg shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
+              className=" flex h-full p-5 bg-bg-[#5c7979]/70 dark:bg-[#5c7979]/70 rounded-md justify-start text-justify ...  leading-10 text-black  dark:text-white font-NotoSans text-sm md:text-lg lg:text-lg shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
               // className=" flex h-full p-5 bg-[#FAF0D7]/90 dark:bg-[#5c7979]/70 rounded-md justify-start text-justify ...  leading-10 text-black  dark:text-white font-NotoSans text-sm md:text-lg lg:text-lg shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
               // className=" flex p-5 bg-[#FAF0D7]/80 dark:bg-[#5c7979]/70 rounded-md justify-start text-justify ...  leading-10 text-black  dark:text-white font-NotoSans text-sm md:text-lg lg:text-lg shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
               dir="rtl"
