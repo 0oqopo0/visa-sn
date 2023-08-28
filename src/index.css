@@ -105,7 +105,32 @@ body{
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.card{
+/* .card{
     @apply  cursor-pointer border-b-4 rounded-md bg-gradient-to-t
     from-slate-500 h-[300px];
+} */
+
+.card {
+@apply  w-72 cursor-pointer border-b-4 rounded-md bg-gradient-to-t
+from-red-800/20  h-44 text-center px-3 py-7 self-end;
+}
+.card-active{
+    @apply h-96;
+}
+.logo{
+    @apply text-5xl mt-2 max-w-[5rem] mx-auto  min-w-[5rem] min-h-[5rem] rounded-full bg-red-200
+    text-red-600 grid place-items-center ;
+}
+.para{
+    @apply mt-3;
+}
+.card .skill-level{
+    @apply  border-2 border-red-300 text-white min-w-[3rem] min-h-[3rem]
+    grid place-content-center rounded-full max-w-[3rem] absolute right-0 scale-0;
+}
+.card-active .skill-level{
+    @apply scale-[1.3] delay-700 duration-300;
+}
+.card-active .logo{
+    @apply bg-black/50 text-red-200 ;
 }

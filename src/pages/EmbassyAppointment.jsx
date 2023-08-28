@@ -183,7 +183,7 @@ const EmbassyAppointment = () => {
       //  animate={{ x: "0%" }}
       //  exit={{ opacity: 0 }}
       //  transition={{ duration: 1, ease: "easeInOut" }}
-      className="flex-col w-full h-full   justify-center items-start absolute  bg-slate-100 dark:bg-black "
+      className="flex-col w-full h-[85%]   justify-center items-start absolute  bg-slate-100 dark:bg-black "
     >
       <div className="mt-24 h-full w-full bg-white dark:bg-[#2C3333]  ">
 

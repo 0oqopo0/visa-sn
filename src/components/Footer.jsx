@@ -3,7 +3,7 @@ import React from "react";
 import { AiFillGithub } from "react-icons/ai";
 
 const Footer = () => (
-  <div className="flex  justify-between fixed h-20 md:h-24 lg:h-24 w-full text-sky-500 text-sm bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 items-center border-t-2 border-black shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
+  <div className="flex  justify-between fixed h-20 md:h-24 lg:h-24 w-full text-sky-500 text-sm bg-white/80 dark:bg-black/90 items-center border-t-2 border-sky-500 shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] z-55500"
   // style={{ zIndex: "50" }}
   // style={{ zIndex: "1000" }}
   >
@@ -62,3 +62,4 @@ const Footer = () => (
 );
 
 export default Footer;
+ 

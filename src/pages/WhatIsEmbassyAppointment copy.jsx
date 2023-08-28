@@ -88,7 +88,7 @@ const WhatIsEmbassyAppointment = () => {
     //   transition={{ duration: 0.5, ease: "easeInOut" }}
     //   className="flex mt-28 ml-5 mr-5  bg-green-400/60 rounded-3xl justify-center items-center  p-9 flex-col"
     // >
-    <div className="flex  mt-28 shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]">
+    <div className="flex  mt-28 bg-red-400 ">
       <Swiper
         spaceBetween={10}
         slidesPerView={2}

@@ -161,11 +161,11 @@ const Home = () => {
 
   return (
     <m.div
-      // initial={{ y: "50%" }}
-      // animate={{ y: "0%" }}
-      // exit={{ opacity: 0 }}
-      // transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="flex-col w-full h-full pt-0  justify-center items-start absolute  bg-slate-100 dark:bg-black "
+      // initial={{ x: "100%" }}
+      //  animate={{ x: "0%" }}
+      //  exit={{ opacity: 0 }}
+      //  transition={{ duration: 1, ease: "easeInOut" }}
+      className="flex-col w-full h-[85%]   justify-center items-start absolute  bg-slate-100 dark:bg-black "
     >
       {/* //////////////////////////////////////////////// */}
       {/* //////////////////// Header //////////////////// */}
@@ -173,7 +173,7 @@ const Home = () => {
 
       <div className="flex justify-center h-24 ">
         <video
-          className="flex h-full   w-screen  object-cover rounded-bl-sm rounded-md "
+          className="flex h-full   w-screen  object-cover "
           // src={Video00}
           src={sunrise}
           // src={Nature_159101}
@@ -183,34 +183,32 @@ const Home = () => {
         >
           {/* <h2 className="z-50 absolute bg-red-600 py-4">در کمترین زمان ممکن</h2> */}
         </video>
-         <m.h1
-              className=" absolute mt-5  rounded-md p-2 text-red-500 font-Gabriola  text-5xl "
-              initial={{ x: "-100%" }}
-              animate={{ x: "0%" }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-            >
 
-            </m.h1> 
       </div>
 
-      {/* //////////////////////////////////////////////// */}
-      {/* //////////////////////////////////////////////// */}
 
-      {/* //////////////////////////////////////////////// */}
+
+
+
+
+
+
+            {/* //////////////////////////////////////////////// */}
       {/* ///////////////////Section One////////////////// */}
       {/* //////////////////////////////////////////////// */}
 
+
       <NavLink
         // to={`/${Data[0].subItem[currentIndexFirstSlider].eName}`}
-        to={"/EmbassyAppointment"}
+        to={"/USAEmbassyAppointment"}
+        // to={"/EmbassyAppointment"}
         // key={uuid()}
       >
         <m.div
           initial={{ opacity: 0, y: "30%" }}
           animate={{ opacity: 1, y: "0%" }}
           transition={{ duration: 0.75, ease: "easeInOut" }}
-          className="flex flex-col h-full   py-2  px-2  group bg-white dark:bg-black  rounded-lg"
+          className="flex flex-col h-[85%]  py-2  px-2  group bg-white dark:bg-black  rounded-lg"
         >
           {/*/////////////////////// Video ///////////////////////////// */}
 
@@ -230,16 +228,18 @@ const Home = () => {
               loop
               muted
             >
+              
               {/* <h2 className="z-50 absolute bg-red-600 py-4">در کمترین زمان ممکن</h2> */}
             </video>
             <m.h1
-              className=" absolute mt-5  shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] rounded-md p-2 text-yellow-200 bg-black/20 font-Gabriola  text-3xl md:text-5xl g:text-5xl"
+              className=" absolute mt-5  shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] rounded-md p-2 text-gray-300 pr-4 pl-4 bg-black/20 font-Gabriola  text-3xl md:text-5xl g:text-5xl"
               initial={{ x: "100%" }}
               animate={{ x: "0%" }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1, ease: "easeInOut" }}
             >
-              Journey to infinity
+         
+              Journey To Infinity
             </m.h1>
 
             {/*/////////////////////// Title ///////////////////////////// */}
@@ -287,7 +287,7 @@ const Home = () => {
         initial={{ opacity: 0, y: "30%" }}
         animate={{ opacity: 1, y: "0%" }}
         transition={{ duration: 0.75, ease: "easeInOut" }}
-        className="flex flex-col h-full  py-2  px-2   group bg-white dark:bg-black  "
+        className="flex flex-col h-[85%] py-2  px-2   group bg-white dark:bg-black  "
       >
         {/* <div className=" h-screen m-auto mt-8 py-16  relative group bg-white dark:bg-black "> */}
 
@@ -371,7 +371,8 @@ const Home = () => {
             handleDescription();
           }}
           onMouseEnter={handleDescription}
-        >
+          >
+          
           {descrition ? (
             <MdWbIncandescent className="text-yellow-300 text-3xl " />
           ) : (
@@ -401,6 +402,10 @@ const Home = () => {
         </div>
       </m.div>
 
+
+
+
+      
       {/* //////////////////////////////////////////////// */}
       {/* //////////////// Section Three ///////////////// */}
       {/* //////////////////////////////////////////////// */}
@@ -409,7 +414,7 @@ const Home = () => {
         initial={{ opacity: 0, y: "30%" }}
         animate={{ opacity: 1, y: "0%" }}
         transition={{ duration: 0.75, ease: "easeInOut" }}
-        className="flex flex-col h-full py-2  px-2   group bg-white dark:bg-black  "
+        className="flex flex-col h-[85%] py-2  px-2   group bg-white dark:bg-black  "
       >
         {/*/////////////////////// Image ///////////////////////////// */}
         {/*/////////////////////// Image ///////////////////////////// */}
@@ -479,6 +484,7 @@ const Home = () => {
         {/* Right Arrow */}
         <div
           className=" group-hover:block absolute top-[50%]  right-5 text-2xl rounded-full p-2 bg-red-500/40 text-white cursor-pointer duration-500 shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
+          // className=" group-hover:block absolute top-[50%]  right-5 text-2xl rounded-full p-2 bg-red-500/40 text-white cursor-pointer duration-500 shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
           // onClick={() => DataInfo(Data[0].subItem.length , Data[0].eTitle)}
           onClick={function (event) {
             DataInfo(Data[1].subItem.length, Data[1].eTitle);
@@ -535,75 +541,6 @@ const Home = () => {
         </div>
       </m.div>
 
-      {/* //////////////////////////////////////////////// */}
-      {/* ///////////////////Section Four//////////////// */}
-      {/* //////////////////////////////////////////////// */}
-
-      <m.div
-        initial={{ opacity: 0, y: "30%" }}
-        animate={{ opacity: 1, y: "0%" }}
-        transition={{ duration: 0.75, ease: "easeInOut" }}
-        className="flex flex-col h-full   py-2  px-2  group bg-white dark:bg-black  "
-      >
-        {/*/////////////////////// Video ///////////////////////////// */}
-
-        <m.div
-          initial={{ y: "100%" }}
-          animate={{ y: "0%" }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="w-full h-full justify-start items-center rounded-md flex flex-col   bg-center bg-cover  border-b-1 border-l-1 border-r-1  border-gray-600 "
-        >
-          <video
-            className="flex h-full justify-center items-center  w-screen  object-cover rounded-bl-sm rounded-md "
-            // src={Video00}
-            src={Nature_159101}
-            // src={Nature_159101}
-            autoPlay
-            loop
-            muted
-          >
-            {/* <h2 className="z-50 absolute bg-red-600 py-4">در کمترین زمان ممکن</h2> */}
-          </video>
-          <m.h1
-            className=" absolute mt-5  shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] rounded-md p-2 text-yellow-100 bg-black/20 font-Gabriola  text-5xl"
-            initial={{ x: "100%" }}
-            animate={{ x: "0%" }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-          >
-            Journey to infinity
-          </m.h1>
-
-          {/*/////////////////////// Title ///////////////////////////// */}
-
-          <div
-            //  initial={{x: "100%" }} animate={{x: "0%"}} transition={{duration: 1.5,ease:'easeInOut' }}
-            // initial={{x: "100%" }} animate={{x: "0%"}} transition={{duration: 0.75,ease:'easeInOut' }}
-            className="flex absolute w-full mt-28 justify-around h-24   text-xl  items-center  text-white  shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] "
-          >
-            <m.div
-              // initial={{x: "80%"}} animate={{x: "0%"}} transition={{duration: 0.5,ease:'backInOut' }}
-              // initial={{opacity: 0 ,x:"100%"}} animate={{opacity: 1 ,x:"0%"}} exit={{opacity: 0}} transition={{duration: .75,ease:'easeIn' }}
-              className="flex justify-center items-center overflow-hidden  w-full"
-            >
-              <m.h1
-                className="text-1xl flex w-[80%] justify-center items-center text-black  "
-                initial={{ opacity: 0, x: "100%" }}
-                animate={{ opacity: 1, x: "0%" }}
-                exit={{ opacity: 1, x: "0%" }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-              >
-                سفــر تا بــیکــران
-              </m.h1>
-            </m.div>
-
-            {/*/////////////////////// Title ///////////////////////////// */}
-          </div>
-        </m.div>
-
-        {/* ////////////////////////////////////////////////////////////////////////////// */}
-      </m.div>
 
       {/* //////////////////////////////////////////////// */}
       {/* ///////////////////Section Five//////////////// */}
