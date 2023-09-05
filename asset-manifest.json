@@ -1,12 +1,16 @@
 {
   "files": {
-    "main.css": "/visa-sn/static/css/main.67fc6c67.css",
-    "main.js": "/visa-sn/static/js/main.6476651b.js",
+    "main.css": "/visa-sn/static/css/main.6c13d3f1.css",
+    "main.js": "/visa-sn/static/js/main.43de16ce.js",
     "static/media/nature_105936_720p.mp4": "/visa-sn/static/media/nature_105936_720p.d8b2cd89040010c832a5.mp4",
     "static/media/sunrise.mp4": "/visa-sn/static/media/sunrise.d2cc4115de6c0581f9a6.mp4",
     "static/media/Nature_159101.mp4": "/visa-sn/static/media/Nature_159101.77e2211740442a140c4d.mp4",
     "static/media/beachVid.mp4": "/visa-sn/static/media/beachVid.aaafa1c17fc79e9a6d45.mp4",
+    "static/media/img_1.jpg": "/visa-sn/static/media/img_1.f406550ce6957e6ccff7.jpg",
+    "static/media/img_3.jpg": "/visa-sn/static/media/img_3.756416dc7e2813d5c5d6.jpg",
+    "static/media/img_6.jpg": "/visa-sn/static/media/img_6.cbed77688f84963c9843.jpg",
     "static/media/Gabriola.ttf": "/visa-sn/static/media/Gabriola.88ea98efc0d476a13db1.ttf",
+    "static/media/img_7.jpg": "/visa-sn/static/media/img_7.4fb0bfdf95bb1ee77f63.jpg",
     "static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.jpg": "/visa-sn/static/media/England_Rivers_Bridges_People_Tower_Bridge_London_608840_1280x853.3e4c41de3340aae7050e.jpg",
     "static/media/Italy_Sea_Houses_Roads_Atrani_612044_1280x853.jpg": "/visa-sn/static/media/Italy_Sea_Houses_Roads_Atrani_612044_1280x853.c22a042cbf5f16ca2d64.jpg",
     "static/media/England_Houses_Ashridge_Estate_From_above_615306_1280x852.jpg": "/visa-sn/static/media/England_Houses_Ashridge_Estate_From_above_615306_1280x852.41ec061cc91708e4d5fa.jpg",
@@ -21,12 +25,15 @@
     "static/media/5.jpg": "/visa-sn/static/media/5.5bf325d7749566559016.jpg",
     "static/media/2.jpg": "/visa-sn/static/media/2.c0e24a9c11c609d360c6.jpg",
     "static/media/1.jpg": "/visa-sn/static/media/1.71e27478ae31d88a8734.jpg",
+    "static/media/img_5.jpg": "/visa-sn/static/media/img_5.bcd042a5200f4192869f.jpg",
     "static/media/USA_Bridges_golden_bridge_San_Francisco_614954_1280x853.jpg": "/visa-sn/static/media/USA_Bridges_golden_bridge_San_Francisco_614954_1280x853.7359c4760d24db7b9986.jpg",
     "static/media/USA_Evening_Houses_Sculptures_United_States_598081_1280x853.jpg": "/visa-sn/static/media/USA_Evening_Houses_Sculptures_United_States_598081_1280x853.f9a50d730777c8db4b4c.jpg",
     "static/media/3.jpg": "/visa-sn/static/media/3.b534d9f393e8d1f0f781.jpg",
     "static/media/6.jpg": "/visa-sn/static/media/6.ade94d73fa99a12766b3.jpg",
     "static/media/aleni.jpg": "/visa-sn/static/media/aleni.97b3b361067bed5d7759.jpg",
+    "static/media/img_2.jpg": "/visa-sn/static/media/img_2.9c4a94e2e0b61cee51e4.jpg",
     "static/media/melisenta.jpg": "/visa-sn/static/media/melisenta.3557106973b8bfe26623.jpg",
+    "static/media/img_4.jpg": "/visa-sn/static/media/img_4.087d44ebf29f0451cefb.jpg",
     "static/media/Mount.jpg": "/visa-sn/static/media/Mount.219c36b3566400613498.jpg",
     "static/media/Earth.jpg": "/visa-sn/static/media/Earth.ca5c52d7623cb84e20e4.jpg",
     "static/media/Mj_Annab.ttf": "/visa-sn/static/media/Mj_Annab.926abd16ba9b3ff24fdc.ttf",
@@ -45,11 +52,11 @@
     "static/media/MjSiliconBold.ttf": "/visa-sn/static/media/MjSiliconBold.35f5c8a6f103f27cb949.ttf",
     "static/media/FontMJCurves.ttf": "/visa-sn/static/media/FontMJCurves.52b60dc797a9d2fc9d2c.ttf",
     "index.html": "/visa-sn/index.html",
-    "main.67fc6c67.css.map": "/visa-sn/static/css/main.67fc6c67.css.map",
-    "main.6476651b.js.map": "/visa-sn/static/js/main.6476651b.js.map"
+    "main.6c13d3f1.css.map": "/visa-sn/static/css/main.6c13d3f1.css.map",
+    "main.43de16ce.js.map": "/visa-sn/static/js/main.43de16ce.js.map"
   },
   "entrypoints": [
-    "static/css/main.67fc6c67.css",
-    "static/js/main.6476651b.js"
+    "static/css/main.6c13d3f1.css",
+    "static/js/main.43de16ce.js"
   ]
 }
