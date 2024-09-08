@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/visa-sn/static/css/main.e015a9fc.css",
-    "main.js": "/visa-sn/static/js/main.f540622c.js",
+    "main.css": "/visa-sn/static/css/main.f4f2faa2.css",
+    "main.js": "/visa-sn/static/js/main.762d5d6b.js",
     "static/media/nature_105936_720p.mp4": "/visa-sn/static/media/nature_105936_720p.d8b2cd89040010c832a5.mp4",
     "static/media/sunrise.mp4": "/visa-sn/static/media/sunrise.d2cc4115de6c0581f9a6.mp4",
+    "static/media/mountain.mp4": "/visa-sn/static/media/mountain.25e38a3977ec0aaebdc7.mp4",
     "static/media/Nature_159101.mp4": "/visa-sn/static/media/Nature_159101.77e2211740442a140c4d.mp4",
     "static/media/beachVid.mp4": "/visa-sn/static/media/beachVid.aaafa1c17fc79e9a6d45.mp4",
     "static/media/img_1.jpg": "/visa-sn/static/media/img_1.f406550ce6957e6ccff7.jpg",
@@ -36,27 +37,39 @@
     "static/media/img_4.jpg": "/visa-sn/static/media/img_4.087d44ebf29f0451cefb.jpg",
     "static/media/Mount.jpg": "/visa-sn/static/media/Mount.219c36b3566400613498.jpg",
     "static/media/Earth.jpg": "/visa-sn/static/media/Earth.ca5c52d7623cb84e20e4.jpg",
+    "static/media/Zaman.ttf": "/visa-sn/static/media/Zaman.df258ef02fac1a81c58c.ttf",
     "static/media/Mj_Annab.ttf": "/visa-sn/static/media/Mj_Annab.926abd16ba9b3ff24fdc.ttf",
     "static/media/Sols.ttf": "/visa-sn/static/media/Sols.6fc24123ee35c604dbf8.ttf",
     "static/media/BKamranOutline.ttf": "/visa-sn/static/media/BKamranOutline.1a8bc8cb1868ab578099.ttf",
+    "static/media/B Nazanin Outline.ttf": "/visa-sn/static/media/B Nazanin Outline.5002dd40f111bd8ddc45.ttf",
     "static/media/MjSusan.ttf": "/visa-sn/static/media/MjSusan.2a93f78b593a700dcb2c.ttf",
+    "static/media/AGol.ttf": "/visa-sn/static/media/AGol.84a733e6e31d4565fe86.ttf",
     "static/media/MjSiliconOutline.ttf": "/visa-sn/static/media/MjSiliconOutline.cfa5ac2018a7a883ff29.ttf",
     "static/media/BKamran.ttf": "/visa-sn/static/media/BKamran.f5f44e7d60b185886185.ttf",
     "static/media/B Farnaz.ttf": "/visa-sn/static/media/B Farnaz.301360962f5cfb2acf8b.ttf",
+    "static/media/B Lotus Bold.ttf": "/visa-sn/static/media/B Lotus Bold.0779f92bda2ac86985fc.ttf",
+    "static/media/Titr_Bold.ttf": "/visa-sn/static/media/Titr_Bold.8e847d22bb907451f82e.ttf",
+    "static/media/B Nazanin.ttf": "/visa-sn/static/media/B Nazanin.d7478a9ecad2d8496d98.ttf",
+    "static/media/B Nazanin Bold.ttf": "/visa-sn/static/media/B Nazanin Bold.234e90c54d5b365c8990.ttf",
+    "static/media/B Lotus.ttf": "/visa-sn/static/media/B Lotus.2b00479324888c7c1eb1.ttf",
     "static/media/MjSilicon.ttf": "/visa-sn/static/media/MjSilicon.10b8e6da73a93d5220af.ttf",
     "static/media/BKamranBold.ttf": "/visa-sn/static/media/BKamranBold.06fbe0db6300c5f4851d.ttf",
-    "static/media/B Homa.ttf": "/visa-sn/static/media/B Homa.578e079ba30c60b4a146.ttf",
+    "static/media/BKarimBold.ttf": "/visa-sn/static/media/BKarimBold.4d821d90a2f7e754175f.ttf",
+    "static/media/BHoma.ttf": "/visa-sn/static/media/BHoma.578e079ba30c60b4a146.ttf",
     "static/media/BMehrBold.ttf": "/visa-sn/static/media/BMehrBold.845a31dcdd34df89040f.ttf",
+    "static/media/BKarim.ttf": "/visa-sn/static/media/BKarim.bfc16ecfabae824045f0.ttf",
+    "static/media/Narenj.ttf": "/visa-sn/static/media/Narenj.fc7d8756e1c27b1599f6.ttf",
     "static/media/MjSiliconWideItalic.ttf": "/visa-sn/static/media/MjSiliconWideItalic.84ed095ee0b9deb50055.ttf",
     "static/media/Mj_Nadine.ttf": "/visa-sn/static/media/Mj_Nadine.1eec1a75ae0a3f5d472a.ttf",
     "static/media/MjSiliconBold.ttf": "/visa-sn/static/media/MjSiliconBold.35f5c8a6f103f27cb949.ttf",
     "static/media/FontMJCurves.ttf": "/visa-sn/static/media/FontMJCurves.52b60dc797a9d2fc9d2c.ttf",
+    "static/media/DigitalNumbers-Regular.ttf": "/visa-sn/static/media/DigitalNumbers-Regular.cc3aac3fb51de512bd28.ttf",
     "index.html": "/visa-sn/index.html",
-    "main.e015a9fc.css.map": "/visa-sn/static/css/main.e015a9fc.css.map",
-    "main.f540622c.js.map": "/visa-sn/static/js/main.f540622c.js.map"
+    "main.f4f2faa2.css.map": "/visa-sn/static/css/main.f4f2faa2.css.map",
+    "main.762d5d6b.js.map": "/visa-sn/static/js/main.762d5d6b.js.map"
   },
   "entrypoints": [
-    "static/css/main.e015a9fc.css",
-    "static/js/main.f540622c.js"
+    "static/css/main.f4f2faa2.css",
+    "static/js/main.762d5d6b.js"
   ]
 }
