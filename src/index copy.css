@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;200;300&family=Noto+Nastaliq+Urdu:wght@600&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh +Arabic:wght@100;200;300&family=Noto+Naskh+Arabic&family=Noto+Nastaliq+Urdu:wght@600&family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: 'FontMJCurves';
+    src: local('FontMJCurves'), url("../src/Fonts/FontMJCurves.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Mj_Annab';
+    src: local('Mj_Annab'), url("../src/Fonts/Mj_Annab.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Mj_Nadine';
+    src: local('Mj_Nadine'), url("../src/Fonts/Mj_Nadine.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'MjSilicon';
+    src: local('MjSilicon'), url("../src/Fonts/MjSilicon.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'MjSiliconBold';
+    src: local('MjSiliconBold'), url("../src/Fonts/MjSiliconBold.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'MjSiliconOutline';
+    src: local('MjSiliconOutline'), url("../src/Fonts/MjSiliconOutline.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'MjSiliconWideItalic';
+    src: local('MjSiliconWideItalic'), url("../src/Fonts/MjSiliconWideItalic.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'MjSusan';
+    src: local('MjSusan'), url("../src/Fonts/MjSusan.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Sols';
+    src: local('Sols'), url("../src/Fonts/Sols.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'BKamranOutline';
+    src: local('BKamranOutline'), url("../src/Fonts/BKamranOutline.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'BKamran';
+    src: local('BKamran'), url("../src/Fonts/BKamran.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'BKamranBold';
+    src: local('BKamranBold'), url("../src/Fonts/BKamranBold.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'BMehrBold';
+    src: local('BMehrBold'), url("../src/Fonts/BMehrBold.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'B Farnaz';
+    src: local('B Farnaz'), url("../src/Fonts/B Farnaz.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'B Homa';
+    src: local('B Homa'), url("../src/Fonts/B Homa.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Gabriola';
+    src: local('Gabriola'), url("../src/Fonts/Gabriola.ttf") format('truetype');
+}
+
+body{
+    margin: 0;
+    padding:0;
+    
+    font-family: 'Noto Naskh Arabic', serif;
+    font-family: "Merienda", Merienda;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-family: "Noto Nastaliq Urdu", Noto Nastaliq Urdu;
+    /* //////////////////////////////////////// */
+    font-family: 'Mj_Nadine';
+    font-family: 'FontMJCurves';
+    font-family: 'MjSiliconBold';
+    font-family: 'MjSiliconWideItalic';
+    font-family: 'MjSiliconOutline';
+    font-family: 'MjSusan';
+    font-family: 'MjSilicon';
+    font-family: 'Mj_Annab';
+    font-family: 'BMehrBold';
+    font-family: 'BKamranBold';
+    font-family: 'Sols';
+    font-family: 'BKamranOutline';
+    font-family: 'Noto Sans Arabic', sans-serif;
+    font-family: 'Noto Kufi Arabic', serif;
+    font-family: 'Open Sans',sans-serif;
+    font-family: 'BKamran';
+    font-family: 'B Farnaz';
+    font-family: 'Gabriola';
+    font-family: 'B Homa';
+} 
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* .card{
+    @apply  cursor-pointer border-b-4 rounded-md bg-gradient-to-t
+    from-slate-500 h-[300px];
+} */
+
+.card {
+@apply  w-full cursor-pointer  rounded-md bg-gradient-to-t
+from-red-800/40  h-44 text-center px-3 py-7 self-end 
+shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)];
+}
+.card-active{
+    @apply h-full;
+}
+.logo{
+    @apply text-8xl mt-6 max-w-[2rem] mx-auto  min-w-[5rem] min-h-[5rem] rounded-full 
+     text-red-600 grid place-items-center bg-black/40 shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)];
+}
+.para{
+    @apply mt-3;
+}
+.card .skill-level{
+    @apply  border-2 border-red-300 text-white min-w-[3rem] min-h-[3rem]
+    grid place-content-center rounded-full max-w-[3rem] absolute right-0 scale-0;
+}
+.card-active .skill-level{
+    @apply scale-[1.3] delay-700 duration-300;
+}
+.card-active .logo{
+    @apply bg-black/80 text-red-200 ;
+}
