@@ -84,13 +84,11 @@ const Navbar = () => {
     }
   }, [isAuthenticated]);
 
-  const [allUsers, setAllUsers] = useState([]); // تغییر نام state به allUsers
-
   const fetchgetAllUsers = async () => {
     try {
       const token = localStorage.getItem("token"); // Retrieve the token from localStorage
       const response = await UserService.getAllUsers(token);
-      setAllUsers(response.ourUsers); // تغییر به setAllUsers
+      setgetAllUsers(response.ourUsers);
     } catch (error) {
       console.error("Error fetching profile information:", error);
     }
@@ -194,13 +192,22 @@ const Navbar = () => {
   const clearInput = () => {
     setSearchTerm("");
   };
-  const handelInputChange = (event) => {
+  const handelInputChange = () => {
     setSearchTerm(event.target.value);
   };
 
   const getWidth = () => {
     return isOpen ? "50%" : "0px";
   };
+  // const getWidth = () => {
+  //   if (window.innerWidth <= 640) {
+  //     return isOpen ? "15%" : "0px";
+  //   } else if (window.innerWidth <= 1024) {
+  //     return isOpen ? "28%" : "0px";
+  //   } else {
+  //     return isOpen ? "39.1%" : "0px";
+  //   }
+  // };
 
   return (
     <m.div
@@ -232,8 +239,41 @@ const Navbar = () => {
         }}
         className="fixed right-48 h-24 -top-24 mr-4 mt-24 z-50  text-sm rounded-br-md items-center justify-center justify-items-center"
       >
+        {/* {isAuthenticated && isOpen ? (
+          <div className="flex text-red-400 w-20 bg-sky-500/20 text-lg h-24 items-center justify-center justify-items-center">
+            <CgProfile
+              className="text-green-400 text-5xl bg-black/80 p-2 items-center justify-center justify-items-center rounded-full"
+              onClick={handleMobileMenu}
+            />
+          </div>
+        ) : isOpen ? (
+          <MdOutlineKeyboardDoubleArrowRight
+            className="text-5xl w-8 top-24 h-24 bg-red-500/20 shadow-[inset_0_5px_26px_rgba(8,_112,_184,_0.7)] items-center justify-center justify-items-center"
+            onClick={handleMobileMenu}
+          />
+        ) : (
+          <MdOutlineKeyboardDoubleArrowLeft
+            className="text-5xl w-8 top-24 h-24 bg-red-500/20 shadow-[inset_0_5px_26px_rgba(8,_112,_184,_0.7)] items-center justify-center justify-items-center"
+            onClick={handleMobileMenu}
+          />
+        )} */}
+
         {isOpen && isAuthenticated ? (
           <>
+            {/* <m.div
+animate={{
+width: isAuthenticated && isOpen ? "34%" : "-20px ",
+transition: {
+duration: 0.5,
+type: "spring",
+damping: 15,
+},
+}}
+className="fixed right-48 text-red-400 -top-20 mr-4 mt-24 z-50 h-[65%] md:h-[70%] lg:h-[70%] text-sm rounded-br-md items-center justify-center justify-items-center"
+> */}
+
+            {/* </m.div> */}
+
             <m.div
               animate={{
                 width: isAuthenticated && isOpen ? "39%" : "-20px ",
@@ -254,7 +294,102 @@ const Navbar = () => {
             </m.div>
           </>
         ) : null}
+
+        {isOpen && isAuthenticated ? (
+          <>
+            {/* <m.div
+animate={{
+width: isAuthenticated && isOpen ? "34%" : "-20px ",
+transition: {
+duration: 0.5,
+type: "spring",
+damping: 15,
+},
+}}
+className="fixed right-48 text-red-400 -top-20 mr-4 mt-24 z-50 h-[65%] md:h-[70%] lg:h-[70%] text-sm rounded-br-md items-center justify-center justify-items-center"
+> */}
+
+            {/* </m.div> */}
+          </>
+        ) : null}
       </m.div>
+
+      <m.div
+        animate={{
+          width: getWidth(),
+          transition: {
+            duration: 0.5,
+            type: "spring",
+            damping: 15,
+          },
+        }}
+        className="fixed p-3 right-32 h-24 items-center justify-center justify-items-center text-red-400 text-md rounded-br-md"
+      ></m.div>
+      <div className="border-color flex">
+        <div className="z-50 mr-2 p-2">
+          <NavLink
+            to={`/`}
+            className="flex z-50 items-center flex-col text-yellow-500 text-3xl font-Gabriola"
+            onClick={(event) => {
+              setIsOpen(false);
+            }}
+          >
+            <div className="bg-[url('./Pool/Images/Earth04-64x64.jpg')] ml-50 h-16 w-16 rounded-full justify-center items-center"></div>
+          </NavLink>
+        </div>
+        <m.div
+          initial={{ y: "100%" }}
+          animate={{ y: "0%" }}
+          transition={{ duration: 0.75, ease: "backInOut" }}
+          className="flex flex-col items-center justify-between justify-items-center w-16 h-24 transition-colors duration-500 bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 border-solid border-b-1 border-black rounded-sm shadow-[inset_0_5px_26px_rgba(8,_112,_184,_0.7)] py-1 px-1"
+        >
+          <div className="relative">
+            <input
+              type="radio"
+              id="dark"
+              name="theme"
+              value="Dark"
+              className="hidden"
+              onChange={setMode}
+              checked={currentMode === "Dark"}
+              onMouseEnter={currentMode === "Dark"}
+            />
+            <label
+              htmlFor="dark"
+              className={`cursor-pointer flex items-center justify-center rounded-full ${
+                currentMode === "Dark"
+                  ? "bg-black text-yellow-500 w-6 h-6 shadow-[inset_0_5px_26px_rgba(8,_112,_184,_0.7)]"
+                  : "bg-gray-300 text-gray-500 w-6 h-6"
+              }`}
+            >
+              <RxMoon className="text-2xl" />
+            </label>
+          </div>
+
+          <div className="relative mb-2">
+            <input
+              type="radio"
+              id="light"
+              name="theme"
+              value="Light"
+              className="hidden"
+              onChange={setMode}
+              checked={currentMode === "Light"}
+              onMouseEnter={currentMode === "Light"}
+            />
+            <label
+              htmlFor="light"
+              className={`cursor-pointer flex items-center justify-center rounded-full ${
+                currentMode === "Light"
+                  ? "bg-white text-yellow-500 w-6 h-6 shadow-[inset_0_5px_26px_rgba(8,_112,_184,_0.7)]"
+                  : "bg-gray-300 text-gray-500 w-6 h-6"
+              }`}
+            >
+              <GiSunflower className="text-3xl" />
+            </label>
+          </div>
+        </m.div>
+      </div>
     </m.div>
   );
 };
