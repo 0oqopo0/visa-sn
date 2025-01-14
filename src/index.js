@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // تغییر به 'react-dom/client'
+import ReactDOM from 'react-dom';
 
 import './index.css';
 import App from './App';
@@ -7,15 +7,13 @@ import { ContextProvider } from './contexts/ContextProvider';
 // import 'swiper/swiper-bundle.css';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import 'swiper/css';
+//////// test
 
-// پیدا کردن عنصر ریشه
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-// استفاده از createRoot برای رندر کردن اپلیکیشن
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <ContextProvider>
       <App />
     </ContextProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root'),
 );
