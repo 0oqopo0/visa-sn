@@ -107,13 +107,25 @@ function UserManagementPage() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // ///////////////////////////////////////
-
+  // انیمیشن با تأخیر 
+  // ///////////////////////////////////////
   const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0 },
+    visible: {
+      // opacity: 715,
+      transition: {
+        duration: 5, // طولانی‌تر شدن افکت
+        delay: 5, // افزایش تأخیر برای شروع
+        ease: "easeInOut", // حرکت نرم‌تر
+      },
+    },
   };
-
+  // const rowOddColor = "rgba(236, 239, 241, 0.8)"; // رنگ برای ردیف‌های فرد
+  // const rowEvenColor = "rgba(144, 164, 174, 0.8)"; // رنگ برای ردیف‌های زوج
+  
+  // ///////////////////////////////////////
   // تعریف ستون‌ها برای DataGrid
+  // ///////////////////////////////////////
   const columns = [
     {
       field: "row",
@@ -194,7 +206,7 @@ const darkBackground = "#e42929"; // رنگ پس‌زمینه تاریک
 const applyOpacity = (color, opacity) => {
   const hex = color.replace("#", "");
   const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(1, 29), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
   const b = parseInt(hex.substring(4, 6), 16);
   return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 };
@@ -202,48 +214,42 @@ const applyOpacity = (color, opacity) => {
 // رنگ‌های نهایی با شفافیت
 const gridOddRowColor = applyOpacity(
   currentMode === "Dark" ? darkBackground : lightBackground,
-  0.2
+  1
 );
 const gridEvenRowColor = applyOpacity(
   currentMode === "Dark" ? lightBackground : darkBackground,
-  0.2
+  0.1
 );
 
   // ////////////////////////////////
 
   return (
+
     <motion.div
-      className="relative  flex items-center justify-center min-h-screen bg-center bg-cover "
-      style={{
-        backgroundImage: `url(${UserManagementPageC})`,
-      }}
+    className="relative flex items-center justify-center min-h-screen bg-center bg-cover"
+    style={{ backgroundImage: `url(${UserManagementPageC})` }}
+  >
+    <ToastContainer />
+    <motion.div
+      className="relative bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 bg-opacity-30 backdrop-filter backdrop-blur-lg rounded shadow-md w-11/12 border border-sky-400 mt-32 m-20 p-2"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
     >
-      <ToastContainer />
-      <motion.div
-        // className="flex fixed w-full font-semibold justify-between items-center bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 z-30 h-24 border-solid border-b-1 border-black shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
-        // className="relative bg-[#e42929] dark:bg-[#2C3333]/80 bg-opacity-30 backdrop-filter backdrop-blur-lg  rounded shadow-md w-11/12 border border-sky-400 mt-32  m-20 p-2"
-        className="relative bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 bg-opacity-30 backdrop-filter backdrop-blur-lg  rounded shadow-md w-11/12 border border-sky-400 mt-32  m-20 p-2"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
+      <h2 className="text-2xl mb-6 text-center text-sky-500">مدیریت کاربران</h2>
+      <div className="flex flex-row-reverse justify-center mb-4">
+        <p className="text-lg">مجمــوع کاربــران : ( {users.length} )</p>
+      </div>
+
+      <Link
+        to="/register"
+        className="flex bg-sky-500 bg-opacity-90 backdrop-filter backdrop-blur-lg text-black px-4 py-2 rounded hover:bg-blue-600 transition duration-300 mb-2"
       >
-        <h2 className="text-2xl mb-6 text-center text-sky-500">
-          مدیریت کاربران
-        </h2>
-        <div className="flex flex-row-reverse justify-center mb-4">
-          <p className="text-lg">مجمــوع کاربــران : ( {users.length} )</p>
-        </div>
+        Add User
+      </Link>
+      <div style={{ height: 600, width: "100%" }}>
 
-        <Link
-          to="/register"
-          className="flex bg-sky-500 bg-opacity-90 backdrop-filter backdrop-blur-lg text-black px-4 py-2 rounded hover:bg-blue-600 transition duration-300 mb-2"
-        >
-          Add User
-        </Link>
-        <div style={{ height: 600, width: "100%" }}>
-    
-
-        <DataGrid
+      <DataGrid
   rows={rows}
   columns={columns}
   pageSize={recordsPerPage}
@@ -262,13 +268,12 @@ const gridEvenRowColor = applyOpacity(
       backgroundColor: currentMode === "Dark" ? gridOddRowColor : gridEvenRowColor,
     },
     "& .MuiDataGrid-columnHeaders": {
-      backgroundColor: currentMode === "Dark" ? "#EEE" : "#d3f4d8",
-      // color: currentMode === "Dark" ? "red" : "rgba(135, 206, 250, 0.4)", // تغییر رنگ فونت
-      color: currentMode === "Dark" ? "#3C4A4A" : "d3f4d8", // تغییر رنگ فونت
-      transition: "background-color 0.5s ease, color 0.5s ease",
+      backgroundColor: currentMode === "Dark" ? "#3C4A4A" : "#d3f4d8",
+      color: currentMode === "Dark" ? "#FFF" : "#000",
+      transition: "background-color 10.5s ease, color 1.5s ease", // انیمیشن تغییر رنگ
     },
     "& .MuiDataGrid-row": {
-      transition: "background-color 0.5s ease",
+      transition: "background-color 10.5s ease", // انیمیشن تغییر رنگ
     },
     "& .MuiDataGrid-row:nth-of-type(odd)": {
       backgroundColor: gridOddRowColor,
@@ -278,17 +283,17 @@ const gridEvenRowColor = applyOpacity(
     },
     "& .MuiDataGrid-footerContainer": {
       backgroundColor: currentMode === "Dark" ? gridOddRowColor : gridEvenRowColor,
-      transition: "background-color 0.5s ease",
+      transition: "background-color 10.5s ease", // انیمیشن تغییر رنگ
     },
   }}
+  
+  
 />
-
-
-
-</div>
-
-      </motion.div>
+      </div>
     </motion.div>
+  </motion.div>
+
+  
   );
 }
 

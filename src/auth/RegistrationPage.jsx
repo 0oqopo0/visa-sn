@@ -59,7 +59,7 @@ function RegistrationPage() {
         return;
       }
 
-      setFormData({ name: "", email: "", password: "", role: "", city: "" });
+      // setFormData({ name: "", email: "", password: "", role: "", city: "" });
       if (response.statusCode === 200) {
         Swal.fire({
           icon: "success",
@@ -110,11 +110,12 @@ function RegistrationPage() {
           </motion.div>
           <motion.div className="mb-4" variants={itemVariants}>
             <label className="block text-gray-700">نقش:</label>
-            <select name="role" value={formData.role} onChange={handleInputChange}  className="w-full px-3 py-2 border rounded">
+            <select name="role" value={formData.role} onChange={handleInputChange} required  className="w-full px-3 py-2 border rounded">
               <option value="">یک نقش انتخاب کنید</option>
               {Array.isArray(roles) && roles.map((role) => (
-                <option key={role.id} value={role.roleCodePer}>
+                <option key={role.id} value={role.roleCodeEng}>
                   {role.roleCodePer}
+                  {/* {role.roleCodeEng} */}
                 </option>
               ))}
             </select>

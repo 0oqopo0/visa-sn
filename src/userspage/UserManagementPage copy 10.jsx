@@ -243,7 +243,7 @@ const gridEvenRowColor = applyOpacity(
         <div style={{ height: 600, width: "100%" }}>
     
 
-        <DataGrid
+<DataGrid
   rows={rows}
   columns={columns}
   pageSize={recordsPerPage}
@@ -254,35 +254,35 @@ const gridEvenRowColor = applyOpacity(
   components={{
     Toolbar: GridToolbar,
   }}
-  sx={{
-    direction: "rtl",
-    fontSize: "18px",
-    color: currentMode === "Dark" ? "#EEE" : "#333",
-    "& .MuiDataGrid-root": {
-      backgroundColor: currentMode === "Dark" ? gridOddRowColor : gridEvenRowColor,
-    },
-    "& .MuiDataGrid-columnHeaders": {
-      backgroundColor: currentMode === "Dark" ? "#EEE" : "#d3f4d8",
-      // color: currentMode === "Dark" ? "red" : "rgba(135, 206, 250, 0.4)", // تغییر رنگ فونت
-      color: currentMode === "Dark" ? "#3C4A4A" : "d3f4d8", // تغییر رنگ فونت
-      transition: "background-color 0.5s ease, color 0.5s ease",
-    },
-    "& .MuiDataGrid-row": {
-      transition: "background-color 0.5s ease",
-    },
-    "& .MuiDataGrid-row:nth-of-type(odd)": {
-      backgroundColor: gridOddRowColor,
-    },
-    "& .MuiDataGrid-row:nth-of-type(even)": {
-      backgroundColor: gridEvenRowColor,
-    },
-    "& .MuiDataGrid-footerContainer": {
-      backgroundColor: currentMode === "Dark" ? gridOddRowColor : gridEvenRowColor,
-      transition: "background-color 0.5s ease",
-    },
-  }}
-/>
+ sx={{
+  direction: "rtl",
+  fontSize: "18px",
+  color: currentMode === "Dark" ? "#EEE" : "#333",
+  "& .MuiDataGrid-root": {
+    backgroundColor: currentMode === "Dark" ? gridOddRowColor : gridEvenRowColor,
+  },
+  "& .MuiDataGrid-columnHeaders": {
+    backgroundColor: currentMode === "Dark" ? "#3C4A4A" : "#d3f4d8",
+    color: currentMode === "Dark" ? "#FFF" : "#000",
+    transition: "background-color 0.5s ease, color 0.5s ease", // انیمیشن تغییر رنگ
+  },
+  "& .MuiDataGrid-row": {
+    transition: "background-color 0.5s ease", // انیمیشن تغییر رنگ
+  },
+  "& .MuiDataGrid-row:nth-of-type(odd)": {
+    backgroundColor: gridOddRowColor,
+  },
+  "& .MuiDataGrid-row:nth-of-type(even)": {
+    backgroundColor: gridEvenRowColor,
+  },
+  "& .MuiDataGrid-footerContainer": {
+    backgroundColor: currentMode === "Dark" ? gridOddRowColor : gridEvenRowColor,
+    transition: "background-color 0.5s ease", // انیمیشن تغییر رنگ
+  },
+}}
 
+  
+/>
 
 
 </div>

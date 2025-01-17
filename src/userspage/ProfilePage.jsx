@@ -15,6 +15,15 @@ import { motion } from "framer-motion";
 import UserService from "../service/UserService";
 import { Link } from "react-router-dom";
 import { FaUser, FaEnvelope, FaCity, FaCalendarAlt } from "react-icons/fa";
+import ProfilePage00 from "../Pool/Images/Pub/ProfilePage00.webp"; // مسیر تصویر پسزمینه
+
+
+
+
+
+
+
+
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -67,6 +76,9 @@ function ProfilePage() {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
+      style={{
+        backgroundImage: `url(${ProfilePage00})`,
+      }}
       // className="custom-ui bg-sky-800/60 p-4 rounded shadow-md mt-28"
       // className="custom-ui bg-[#5b6b47]/40 p-4 rounded shadow-md mt-28"
       className="custom-ui bg-[#0c2a36] p-4 rounded shadow-md h-screen"

@@ -5,6 +5,8 @@ import { GiSunflower } from "react-icons/gi";
 import { RxMoon } from "react-icons/rx";
 import UserAccess from "./UserAccess";
 import Clock from "./Clock";
+import RoundwallClock from "./RoundwallClock";
+
 import { CgProfile } from "react-icons/cg";
 import {
   MdOutlineKeyboardDoubleArrowLeft,
@@ -32,6 +34,10 @@ const Navbar = () => {
     setIsOpen,
     isOpenUserAccess,
     setIsOpenUserAccess,
+    setActiveMenuBTN,
+    setScreenSize,
+    screenSize,
+    setMode,
   } = useStateContext();
 
   const handleUserAccess = () => {
@@ -83,7 +89,9 @@ const Navbar = () => {
       fetchgetAllUsers();
     }
   }, [isAuthenticated]);
-
+  const [isgetAllUsers, setgetAllUsers] = useState(
+    UserService.isAuthenticated()
+  );
   const fetchgetAllUsers = async () => {
     try {
       const token = localStorage.getItem("token"); // Retrieve the token from localStorage
@@ -159,15 +167,15 @@ const Navbar = () => {
     setTouristVisaItems(!touristVisaItems);
   };
 
-  const {
-    activeMenu,
-    activeMenuBTN,
-    setActiveMenuBTN,
-    setScreenSize,
-    screenSize,
-    contactClicked,
-    setMode,
-  } = useStateContext();
+  // const {
+  //   activeMenu,
+  //   activeMenuBTN,
+  //   setActiveMenuBTN,
+  //   setScreenSize,
+  //   screenSize,
+  //   setMode,
+  //   contactClicked,
+  // } = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -199,16 +207,7 @@ const Navbar = () => {
   const getWidth = () => {
     return isOpen ? "50%" : "0px";
   };
-  // const getWidth = () => {
-  //   if (window.innerWidth <= 640) {
-  //     return isOpen ? "15%" : "0px";
-  //   } else if (window.innerWidth <= 1024) {
-  //     return isOpen ? "28%" : "0px";
-  //   } else {
-  //     return isOpen ? "39.1%" : "0px";
-  //   }
-  // };
-
+ 
   return (
     <m.div
       initial={{ y: "100%" }}
@@ -216,9 +215,10 @@ const Navbar = () => {
       transition={{ duration: 0.75, ease: "backInOut" }}
       className="flex fixed w-full font-semibold justify-between items-center bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 z-30 h-24 border-solid border-b-1 border-black shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
     >
-      <div className="flex mb-1 mt-1 mr-1 text-sm text-sky-800 dark:text-sky-500 items-center text-md rounded-br-md rounded-md w-full h-8">
+      {/* <div className="flex mb-1 mt-1 mr-1 text-sm text-sky-800 dark:text-sky-500 items-center text-md rounded-br-md rounded-md w-full h-8"> */}
         <Clock />
-      </div>
+        {/* <RoundwallClock /> */}
+      {/* </div> */}
 
       <m.div
         className="flex ml-10 p-3 h-full w-full justify-center items-center text-sm md:text-sm lg:text-4xl text-gray-600 dark:text-yellow-600 font-Gabriola"

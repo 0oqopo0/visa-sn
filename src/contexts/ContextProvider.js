@@ -27,31 +27,31 @@ const [isOpenUserAccess, setIsOpenUserAccess] = useState(false);
 // وضعیت احراز هویت و اطلاعات کاربر
 const [isAuthenticated, setIsAuthenticated] = useState(false);
 const [profileInfo, setProfileInfo] = useState({});
-
 useEffect(() => {
-const checkAuth = () => {
-const authStatus = UserService.isAuthenticated();
-setIsAuthenticated(authStatus);
-if (authStatus) {
-fetchProfileInfo();
-}
-};
-
-checkAuth();
-const interval = setInterval(checkAuth, 1000); // چک کردن وضعیت احراز هویت هر ثانیه
-
-return () => clearInterval(interval); // پاک کردن اینتروال هنگام خروج از کامپوننت
-}, []);
-
-const fetchProfileInfo = async () => {
-try {
-const token = localStorage.getItem('token'); // Retrieve the token from localStorage
-const response = await UserService.getYourProfile(token);
-setProfileInfo(response.ourUsers);
-} catch (error) {
-console.error('Error fetching profile information:', error);
-}
-};
+    const checkAuth = () => {
+      const authStatus = UserService.isAuthenticated();
+      setIsAuthenticated(authStatus);
+      if (authStatus && !profileInfo?.id) { // فقط اگر احراز هویت شده و پروفایل هنوز بارگذاری نشده
+        fetchProfileInfo();
+      }
+    };
+  
+    checkAuth(); // چک اولیه
+    window.addEventListener('storage', checkAuth); // گوش دادن به تغییرات در localStorage
+  
+    return () => window.removeEventListener('storage', checkAuth); // پاک کردن لیسنر هنگام خروج
+  }, [profileInfo]);
+  
+  const fetchProfileInfo = async () => {
+    try {
+      const token = localStorage.getItem('token'); // گرفتن توکن از localStorage
+      const response = await UserService.getYourProfile(token);
+      setProfileInfo(response.ourUsers);
+    } catch (error) {
+      console.error('Error fetching profile information:', error);
+    }
+  };
+  
 
 const setMode = (e) => {
 setCurrentMode(e.target.value);

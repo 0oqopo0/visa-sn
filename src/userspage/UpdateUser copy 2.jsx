@@ -18,6 +18,12 @@ function UpdateUser() {
   });
   const [roles, setRoles] = useState([]);
 
+  const roleMapping = {
+    "کاربر عادی": "USER",
+    "مدیر سیستم": "ADMIN",
+    "مدیر": "MANAGER",
+  };
+
   // گرفتن نقش‌ها و داده‌های کاربر
   useEffect(() => {
     const fetchRoles = async () => {
@@ -37,7 +43,7 @@ function UpdateUser() {
 
         if (response?.ourUsers) {
           const { name, email, roles, city } = response.ourUsers;
-          const role = roles.length > 0 ? roles[0].roleCodeEng : ""; // تغییر به roleCodeEng
+          const role = roles.length > 0 ? roles[0].roleCodePer : "";
           setFormData({ name, email, password: "", role, city });
         }
       } catch (error) {
@@ -55,125 +61,37 @@ function UpdateUser() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // ارسال داده‌ها
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-// ارسال داده‌های فرم
-const handleSubmit = async (e) => {
-  e.preventDefault();
+    const roleInEnglish = roleMapping[formData.role] || formData.role;
 
-  const updatedData = {
-    ...formData,
-    roles: [{ roleCodeEng: formData.role }], // نقش مستقیماً از فرم گرفته می‌شود
-  };
+    const updatedData = {
+      ...formData,
+      roles: [{ roleCodeEng: roleInEnglish }],
+    };
 
-  try {
-    const token = localStorage.getItem("token");
-    const response = await UserService.updateUser(userId, updatedData, token);
+    try {
+      const token = localStorage.getItem("token");
+      await UserService.updateUser(userId, updatedData, token);
 
-    // اگر درخواست موفقیت‌آمیز بود (کد وضعیت 200)
-    if (response.statusCode === 200) {
       Swal.fire({
         title: "موفقیت",
         text: "کاربر با موفقیت به‌روزرسانی شد.",
         icon: "success",
         confirmButtonText: "باشه",
-        timer: 5000,
-        timerProgressBar: true,
-        willOpen: () => {
-          const swalElement = Swal.getPopup();
-          swalElement.addEventListener("mouseover", () => Swal.stopTimer());
-          swalElement.addEventListener("mouseout", () => Swal.resumeTimer());
-        },
       }).then(() => navigate("/admin/user-management"));
-    } else if (response.statusCode === 409) {
-      Swal.fire({
-        title: "ناموفق",
-        text: "ایمیل تکراری است.",
-        icon: "error",
-        confirmButtonText: "باشه",
-        timer: 5000,
-        timerProgressBar: true,
-        willOpen: () => {
-          const swalElement = Swal.getPopup();
-          swalElement.addEventListener("mouseover", () => Swal.stopTimer());
-          swalElement.addEventListener("mouseout", () => Swal.resumeTimer());
-        },
-      });
-    } else if (response.statusCode === 404) {
+    } catch (error) {
+      console.error("Error updating user:", error);
       Swal.fire({
         title: "خطا",
-        text: "کاربر موردنظر پیدا نشد.",
+        text: "مشکلی در به‌روزرسانی کاربر پیش آمد.",
         icon: "error",
         confirmButtonText: "باشه",
-        timer: 5000,
-        timerProgressBar: true,
-        willOpen: () => {
-          const swalElement = Swal.getPopup();
-          swalElement.addEventListener("mouseover", () => Swal.stopTimer());
-          swalElement.addEventListener("mouseout", () => Swal.resumeTimer());
-        },
-      });
-    } else if (response.statusCode === 401) {
-      Swal.fire({
-        title: "خطا",
-        text: "هیچ نقش معتبری پیدا نشد.",
-        icon: "error",
-        confirmButtonText: "باشه",
-        timer: 5000,
-        timerProgressBar: true,
-        willOpen: () => {
-          const swalElement = Swal.getPopup();
-          swalElement.addEventListener("mouseover", () => Swal.stopTimer());
-          swalElement.addEventListener("mouseout", () => Swal.resumeTimer());
-        },
-      });
-    } else if (response.statusCode === 402) {
-      Swal.fire({
-        title: "خطا",
-        text: "هیچ نقشی برای کاربر انتخاب نشده است.",
-        icon: "error",
-        confirmButtonText: "باشه",
-        timer: 5000,
-        timerProgressBar: true,
-        willOpen: () => {
-          const swalElement = Swal.getPopup();
-          swalElement.addEventListener("mouseover", () => Swal.stopTimer());
-          swalElement.addEventListener("mouseout", () => Swal.resumeTimer());
-        },
-      });
-    } else {
-      // اگر هیچ یک از شرایط بالا مطابقت نداشت
-      Swal.fire({
-        title: "خطای نامشخص",
-        text: "خطای غیرمنتظره‌ای رخ داد.",
-        icon: "error",
-        confirmButtonText: "باشه",
-        timer: 5000,
-        timerProgressBar: true,
-        willOpen: () => {
-          const swalElement = Swal.getPopup();
-          swalElement.addEventListener("mouseover", () => Swal.stopTimer());
-          swalElement.addEventListener("mouseout", () => Swal.resumeTimer());
-        },
       });
     }
-  } catch (error) {
-    // مدیریت خطاهای سطح سرور یا شبکه
-    Swal.fire({
-      title: "خطا",
-      text: "مشکلی در ارسال درخواست رخ داد. لطفاً دوباره امتحان کنید.",
-      icon: "error",
-      confirmButtonText: "باشه",
-      timer: 5000,
-      timerProgressBar: true,
-      willOpen: () => {
-        const swalElement = Swal.getPopup();
-        swalElement.addEventListener("mouseover", () => Swal.stopTimer());
-        swalElement.addEventListener("mouseout", () => Swal.resumeTimer());
-      },
-    });
-  }
-};
-
+  };
 
   return (
     <motion.div className="flex items-center justify-center min-h-screen">
@@ -222,8 +140,8 @@ const handleSubmit = async (e) => {
             >
               <option value="">انتخاب نقش</option>
               {roles.map((role) => (
-                <option key={role.id} value={role.roleCodeEng}>
-                  {role.roleCodePer} {/* نمایش نام فارسی نقش */}
+                <option key={role.id} value={role.roleCodePer}>
+                  {role.roleCodePer}
                 </option>
               ))}
             </select>

@@ -12,25 +12,10 @@ import { FaUserPlus } from "react-icons/fa"; // Importing the user icon
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import moment from "moment-jalaali"; // استفاده از moment-jalaali به جای moment
 import { Button } from "@mui/material";
-import { useStateContext } from "../contexts/ContextProvider";
+
 ////////////////////////////////////////////////////////////////////
 
 function UserManagementPage() {
-
-
-    const {
-      currentMode,
-      mobileMenu,
-      setMobileMenu,
-      isOpen,
-      setIsOpen,
-      isOpenUserAccess,
-      setIsOpenUserAccess,
-      setActiveMenuBTN,
-      setScreenSize,
-      screenSize,
-      setMode,
-    } = useStateContext();
   // استفاده از State ها
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -60,7 +45,6 @@ function UserManagementPage() {
         return (
           <motion.div
             className="custom-ui bg-red-400 p-4 rounded shadow-md"
-            // className="custom-ui bg-red-400 p-4 rounded shadow-md"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
@@ -123,7 +107,7 @@ function UserManagementPage() {
     },
     {
       field: "Actions",
-      headerName: "به روز رسانی  ",
+      headerName: "عملیات",
       width: 150,
       filterable: false,
       cellClassName: "yellow-background",
@@ -186,43 +170,16 @@ function UserManagementPage() {
     TooltipLableValue: "مدیریت ها",
   };
 
-  // ////////////////////////////////
-  const lightBackground = "#EEEDDE"; // رنگ پس‌زمینه روشن
-const darkBackground = "#e42929"; // رنگ پس‌زمینه تاریک
-
-// تابع برای تنظیم شفافیت
-const applyOpacity = (color, opacity) => {
-  const hex = color.replace("#", "");
-  const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(1, 29), 16);
-  const b = parseInt(hex.substring(4, 6), 16);
-  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-};
-
-// رنگ‌های نهایی با شفافیت
-const gridOddRowColor = applyOpacity(
-  currentMode === "Dark" ? darkBackground : lightBackground,
-  0.2
-);
-const gridEvenRowColor = applyOpacity(
-  currentMode === "Dark" ? lightBackground : darkBackground,
-  0.2
-);
-
-  // ////////////////////////////////
-
   return (
     <motion.div
-      className="relative  flex items-center justify-center min-h-screen bg-center bg-cover "
+      className="relative flex items-center justify-center min-h-screen bg-center bg-cover "
       style={{
         backgroundImage: `url(${UserManagementPageC})`,
       }}
     >
       <ToastContainer />
       <motion.div
-        // className="flex fixed w-full font-semibold justify-between items-center bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 z-30 h-24 border-solid border-b-1 border-black shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
-        // className="relative bg-[#e42929] dark:bg-[#2C3333]/80 bg-opacity-30 backdrop-filter backdrop-blur-lg  rounded shadow-md w-11/12 border border-sky-400 mt-32  m-20 p-2"
-        className="relative bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 bg-opacity-30 backdrop-filter backdrop-blur-lg  rounded shadow-md w-11/12 border border-sky-400 mt-32  m-20 p-2"
+        className="relative bg-green-400 bg-opacity-30 backdrop-filter backdrop-blur-lg p-2 rounded shadow-md w-full max-w-4xl border border-sky-400 mt-32 mb-28"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -241,50 +198,42 @@ const gridEvenRowColor = applyOpacity(
           Add User
         </Link>
         <div style={{ height: 600, width: "100%" }}>
-    
-
-        <DataGrid
-  rows={rows}
-  columns={columns}
-  pageSize={recordsPerPage}
-  rowsPerPageOptions={[10, 20, 50]}
-  pagination
-  onPageChange={(params) => setCurrentPage(params.page + 1)}
-  localeText={localeTextFa}
-  components={{
-    Toolbar: GridToolbar,
-  }}
-  sx={{
-    direction: "rtl",
-    fontSize: "18px",
-    color: currentMode === "Dark" ? "#EEE" : "#333",
-    "& .MuiDataGrid-root": {
-      backgroundColor: currentMode === "Dark" ? gridOddRowColor : gridEvenRowColor,
-    },
-    "& .MuiDataGrid-columnHeaders": {
-      backgroundColor: currentMode === "Dark" ? "#EEE" : "#d3f4d8",
-      // color: currentMode === "Dark" ? "red" : "rgba(135, 206, 250, 0.4)", // تغییر رنگ فونت
-      color: currentMode === "Dark" ? "#3C4A4A" : "d3f4d8", // تغییر رنگ فونت
-      transition: "background-color 0.5s ease, color 0.5s ease",
-    },
-    "& .MuiDataGrid-row": {
-      transition: "background-color 0.5s ease",
-    },
-    "& .MuiDataGrid-row:nth-of-type(odd)": {
-      backgroundColor: gridOddRowColor,
-    },
-    "& .MuiDataGrid-row:nth-of-type(even)": {
-      backgroundColor: gridEvenRowColor,
-    },
-    "& .MuiDataGrid-footerContainer": {
-      backgroundColor: currentMode === "Dark" ? gridOddRowColor : gridEvenRowColor,
-      transition: "background-color 0.5s ease",
-    },
-  }}
-/>
-
-
-
+  <DataGrid
+    rows={rows}
+    columns={columns}
+    pageSize={recordsPerPage}
+    rowsPerPageOptions={[10, 20, 50]} // گزینه‌های تعداد رکورد در هر صفحه
+    pagination
+    onPageChange={(params) => setCurrentPage(params.page + 1)} // بروزرسانی صفحه
+    localeText={localeTextFa} // ترجمه متن‌ها
+    components={{
+      Toolbar: GridToolbar, // افزودن نوار ابزار برای فیلتر و مرتب‌سازی
+    }}
+    sx={{
+      direction: "rtl",
+      fontSize: "18px",
+      color: "#333",
+      "& .MuiDataGrid-root": {
+        backgroundColor: "#f5f5f5",
+      },
+      "& .MuiDataGrid-columnHeaders": {
+        backgroundColor: "#d3f4d8",
+        color: "#000",
+      },
+      "& .MuiDataGrid-cell": {
+        textAlign: "right",
+      },
+      "& .MuiDataGrid-row:nth-of-type(odd)": {
+        backgroundColor: "#e6f7e6", // سبز کم‌رنگ برای ردیف‌های فرد
+      },
+      "& .MuiDataGrid-row:nth-of-type(even)": {
+        backgroundColor: "#ffffff", // سفید برای ردیف‌های زوج
+      },
+      "& .MuiDataGrid-footerContainer": {
+        backgroundColor: "#f5f5f5",
+      },
+    }}
+  />
 </div>
 
       </motion.div>

@@ -226,3 +226,99 @@ body {
     background-color: #f0f0f0; /* تغییر رنگ پس‌زمینه به خاکستری */
   }
   
+/* ////////////////////////////////////////////////////      */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-animation {
+  animation: fadeIn 3s ease-in-out 3s forwards; /* 3s تاخیر */
+}
+
+/* ////////////////////////////////////////////////////      */
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* وسط‌چین کردن */
+  /* height: 100vh;  */
+  background-color: #f0f4f8;
+}
+
+.clock {
+  position: relative;
+  width: 6rem; /* معادل h-28 */
+  height: 6rem; /* معادل w-28 */
+  background-color: white;
+  border: 6px solid #0ea5e9;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.clock-number {
+  font-size: 11px; /* اندازه کوچک‌تر برای عددها */
+  font-weight: bold;
+  color: #374151;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  color: #374151;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.hand {
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: black;
+  top: 50%;
+  left: 50%;
+  transform-origin: 100%;
+  transform: rotate(0deg);
+  transition: transform 0.1s linear;
+}
+
+.second-hand {
+  height: 1px;
+  background-color: red;
+}
+
+.minute-hand {
+  height: 2px;
+  background-color: #374151;
+}
+
+.hour-hand {
+  height: 3px;
+  background-color: #0ea5e9;
+  width: 35%;
+}
+
+.center-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #0ea5e9;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* ////////////////////////////////////////////////////      */
