@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/visa-sn/static/css/main.f4f2faa2.css",
-    "main.js": "/visa-sn/static/js/main.762d5d6b.js",
+    "main.css": "/visa-sn/static/css/main.ee883aab.css",
+    "main.js": "/visa-sn/static/js/main.e49c4e98.js",
     "static/media/nature_105936_720p.mp4": "/visa-sn/static/media/nature_105936_720p.d8b2cd89040010c832a5.mp4",
     "static/media/sunrise.mp4": "/visa-sn/static/media/sunrise.d2cc4115de6c0581f9a6.mp4",
     "static/media/mountain.mp4": "/visa-sn/static/media/mountain.25e38a3977ec0aaebdc7.mp4",
@@ -25,6 +25,7 @@
     "static/media/Brazil_Houses_Christ_the_Redeemer_Rio_de_Janeiro_570115_1280x853.jpg": "/visa-sn/static/media/Brazil_Houses_Christ_the_Redeemer_Rio_de_Janeiro_570115_1280x853.5d9d9de56a87947d22e3.jpg",
     "static/media/5.jpg": "/visa-sn/static/media/5.5bf325d7749566559016.jpg",
     "static/media/2.jpg": "/visa-sn/static/media/2.c0e24a9c11c609d360c6.jpg",
+    "static/media/ProfilePage00.webp": "/visa-sn/static/media/ProfilePage00.539a14d7bdd42cbdd694.webp",
     "static/media/1.jpg": "/visa-sn/static/media/1.71e27478ae31d88a8734.jpg",
     "static/media/img_5.jpg": "/visa-sn/static/media/img_5.bcd042a5200f4192869f.jpg",
     "static/media/USA_Bridges_golden_bridge_San_Francisco_614954_1280x853.jpg": "/visa-sn/static/media/USA_Bridges_golden_bridge_San_Francisco_614954_1280x853.7359c4760d24db7b9986.jpg",
@@ -34,6 +35,7 @@
     "static/media/aleni.jpg": "/visa-sn/static/media/aleni.97b3b361067bed5d7759.jpg",
     "static/media/img_2.jpg": "/visa-sn/static/media/img_2.9c4a94e2e0b61cee51e4.jpg",
     "static/media/melisenta.jpg": "/visa-sn/static/media/melisenta.3557106973b8bfe26623.jpg",
+    "static/media/UserManagementPageC.webp": "/visa-sn/static/media/UserManagementPageC.253b424231c8df40988d.webp",
     "static/media/img_4.jpg": "/visa-sn/static/media/img_4.087d44ebf29f0451cefb.jpg",
     "static/media/Mount.jpg": "/visa-sn/static/media/Mount.219c36b3566400613498.jpg",
     "static/media/Earth.jpg": "/visa-sn/static/media/Earth.ca5c52d7623cb84e20e4.jpg",
@@ -65,11 +67,11 @@
     "static/media/FontMJCurves.ttf": "/visa-sn/static/media/FontMJCurves.52b60dc797a9d2fc9d2c.ttf",
     "static/media/DigitalNumbers-Regular.ttf": "/visa-sn/static/media/DigitalNumbers-Regular.cc3aac3fb51de512bd28.ttf",
     "index.html": "/visa-sn/index.html",
-    "main.f4f2faa2.css.map": "/visa-sn/static/css/main.f4f2faa2.css.map",
-    "main.762d5d6b.js.map": "/visa-sn/static/js/main.762d5d6b.js.map"
+    "main.ee883aab.css.map": "/visa-sn/static/css/main.ee883aab.css.map",
+    "main.e49c4e98.js.map": "/visa-sn/static/js/main.e49c4e98.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4f2faa2.css",
-    "static/js/main.762d5d6b.js"
+    "static/css/main.ee883aab.css",
+    "static/js/main.e49c4e98.js"
   ]
 }
