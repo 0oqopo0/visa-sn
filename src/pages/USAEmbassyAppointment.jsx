@@ -1,62 +1,99 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Header } from "../components";
-import { motion as m } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from 'swiper';
-import { Link, NavLink } from "react-router-dom";
-import {
-  Data,
-  EmbassyAppointmentItem,
-  TouristVisaItem,
-} from "../data/mobileDummyData";
+import { motion as m } from "framer-motion"; // For animations
+import { useKeenSlider } from "keen-slider/react"; // Keen-Slider React hook
+import "keen-slider/keen-slider.min.css"; // Import Keen-Slider styles
+import { Data } from "../data/mobileDummyData"; // Import your dummy data
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs"; // Import icons
+
 const USAEmbassyAppointment = () => {
-  const editing = { allowDeleting: true, allowEditing: true };
+  // Keen-Slider configuration
+  const [sliderRef, instanceRef] = useKeenSlider({
+    loop: true,
+    slidesPerView: 1,
+    spacing: 15,
+  });
+
+  // Autoplay logic
+  useEffect(() => {
+    const timer = setInterval(() => {
+      instanceRef.current?.next();
+    }, 5000); // 5 seconds delay
+
+    return () => clearInterval(timer); // Cleanup timer on component unmount
+  }, [instanceRef]);
 
   return (
-     <div className="h-screen bg-white dark:bg-[#4B5D67]  flex items-center justify-center">
-     {/* <div className="mt-28 h-full  flex flex-col justify-between  bg-center bg-cover duration-700 border-b-1 border-l-1 border-r-1  border-gray-600   rounded-lg"> */}
-      {/* <div className='h-screen bg-slate-400 flex items-center justify-center'> */}
-      <div className="max-w-sm md:max-w-[100%] lg:max-w-[100%] px-3">
-      {/* <div className="max-w-sm  px-3"> */}
-      {/* <div className="max-w-sm md:max-w-[100%] lg:md:max-w-[100%] px-3"> */}
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={1}
-          onSlideChange={() => console.log("slide change")}
-           onSwiper={(swiper) => console.log(swiper)}
-          loop={true}
-          centeredSlides={true}
-          speed={800}
-          autoplay={{
-            delay: 3000,
-          }}
-          modules={[Autoplay]}
-        >
-          {Data.map(
-            (data, i) =>
-              // data.eTitle == "EmbassyAppointment" &&
-              data.eTitle == "TouristVisa" &&
-              data.subItem.map((item, i) => (
-                <SwiperSlide key={i}>
-                   <div
-                    className="h-full   flex flex-col justify-between  bg-center bg-cover duration-700 border-b-1 border-l-1 border-r-1  border-gray-600   rounded-lg"
-                      style={{backgroundImage: `url(${item.img})`,}}
-                  >
-                    <div className={`card card-active to-green-600/40 `}>
-                      <div className="logo">
-                        {item.flag ? item.flag : item.icon}
-                      </div>
-                      <h2 className="text-xl mt-2 font-NotoSans">
-                        {item.Description}
-                      </h2>
+    <div className="bg-gradient-to-r from-black via-sky-500 via-green-500 via-blue-500 to-black flex flex-col items-center overflow-hidden min-h-screen">
+      {/* Navbar Space */}
+      <div className="h-28"></div>
+
+      {/* Page header */}
+      <m.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="mt-5"
+      >
+        <Header title="USA Embassy Appointment" />
+      </m.div>
+
+      {/* Slider container */}
+      <m.div
+        className="keen-slider max-w-[90%] md:max-w-[80%] lg:max-w-[70%] max-h-[90%] md:max-h-[80%] lg:max-h-[70%] rounded-lg shadow-xl relative "
+        ref={sliderRef}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        {Data.map(
+          (data) =>
+            data.eTitle === "TouristVisa" &&
+            data.subItem.map((item, index) => (
+              <m.div
+                key={index}
+                className="keen-slider__slide"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                {/* Slide content */}
+                <div
+                  className="h-[400px] flex flex-col justify-end bg-center bg-cover rounded-lg overflow-hidden shadow-md border border-gray-300 dark:border-gray-700"
+                  style={{ backgroundImage: `url(${item.img})` }}
+                >
+                  {/* Overlay content */}
+                  <div className="p-4 bg-black/50 text-white">
+                    <h2 className="text-2xl font-bold mb-2 truncate">
+                      {item.Description}
+                    </h2>
+                    <div className="flex items-center gap-2 text-xl">
+                      {item.flag ? item.flag : item.icon}
                     </div>
                   </div>
-                </SwiperSlide>
-              ))
-          )}
-        </Swiper>
-      </div>
+                </div>
+              </m.div>
+            ))
+        )}
+
+        {/* Left Arrow */}
+        <div
+          className="absolute top-[50%] left-5 transform -translate-y-1/2 text-2xl rounded-full p-2 bg-red-500/40 text-white cursor-pointer duration-500 shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] z-10 group-hover:block"
+          onClick={() => instanceRef.current?.prev()}
+        >
+          <BsChevronCompactLeft size={30} />
+        </div>
+
+        {/* Right Arrow */}
+        <div
+          className="absolute top-[50%] right-5 transform -translate-y-1/2 text-2xl rounded-full p-2 bg-red-500/40 text-white cursor-pointer duration-500 shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)] z-10 group-hover:block"
+          onClick={() => instanceRef.current?.next()}
+        >
+          <BsChevronCompactRight size={30} />
+        </div>
+      </m.div>
     </div>
   );
 };
+
 export default USAEmbassyAppointment;

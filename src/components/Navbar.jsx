@@ -207,7 +207,7 @@ const Navbar = () => {
   const getWidth = () => {
     return isOpen ? "50%" : "0px";
   };
- 
+
   return (
     <m.div
       initial={{ y: "100%" }}
@@ -216,8 +216,8 @@ const Navbar = () => {
       className="flex fixed w-full font-semibold justify-between items-center bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 z-30 h-24 border-solid border-b-1 border-black shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
     >
       {/* <div className="flex mb-1 mt-1 mr-1 text-sm text-sky-800 dark:text-sky-500 items-center text-md rounded-br-md rounded-md w-full h-8"> */}
-        <Clock />
-        {/* <RoundwallClock /> */}
+      <Clock />
+      {/* <RoundwallClock /> */}
       {/* </div> */}
 
       <m.div
@@ -239,41 +239,9 @@ const Navbar = () => {
         }}
         className="fixed right-48 h-24 -top-24 mr-4 mt-24 z-50  text-sm rounded-br-md items-center justify-center justify-items-center"
       >
-        {/* {isAuthenticated && isOpen ? (
-          <div className="flex text-red-400 w-20 bg-sky-500/20 text-lg h-24 items-center justify-center justify-items-center">
-            <CgProfile
-              className="text-green-400 text-5xl bg-black/80 p-2 items-center justify-center justify-items-center rounded-full"
-              onClick={handleMobileMenu}
-            />
-          </div>
-        ) : isOpen ? (
-          <MdOutlineKeyboardDoubleArrowRight
-            className="text-5xl w-8 top-24 h-24 bg-red-500/20 shadow-[inset_0_5px_26px_rgba(8,_112,_184,_0.7)] items-center justify-center justify-items-center"
-            onClick={handleMobileMenu}
-          />
-        ) : (
-          <MdOutlineKeyboardDoubleArrowLeft
-            className="text-5xl w-8 top-24 h-24 bg-red-500/20 shadow-[inset_0_5px_26px_rgba(8,_112,_184,_0.7)] items-center justify-center justify-items-center"
-            onClick={handleMobileMenu}
-          />
-        )} */}
 
         {isOpen && isAuthenticated ? (
           <>
-            {/* <m.div
-animate={{
-width: isAuthenticated && isOpen ? "34%" : "-20px ",
-transition: {
-duration: 0.5,
-type: "spring",
-damping: 15,
-},
-}}
-className="fixed right-48 text-red-400 -top-20 mr-4 mt-24 z-50 h-[65%] md:h-[70%] lg:h-[70%] text-sm rounded-br-md items-center justify-center justify-items-center"
-> */}
-
-            {/* </m.div> */}
-
             <m.div
               animate={{
                 width: isAuthenticated && isOpen ? "39%" : "-20px ",
@@ -283,35 +251,19 @@ className="fixed right-48 text-red-400 -top-20 mr-4 mt-24 z-50 h-[65%] md:h-[70%
                   damping: 15,
                 },
               }}
-              className="fixed  h-full right-48 text-red-400 font-BKamran -top-24 mr-4 mt-24 z-50  text-sm rounded-br-md items-center justify-center justify-items-center border-l-1"
+              className="fixed  h-full right-70 text-sky-400 text-xl font-BKamran -top-24 mr-4 mt-24 z-50   rounded-br-md items-center justify-center justify-items-center "
             >
               {isAuthenticated && (
-                <h1 className="flex  justify-start  mt-4 ml-2">
+                <h1 className="flex  justify-start   mt-4 ml-2">
                   {"WellCome Dear : " + profileInfo.name} <br />
-                  {"Role : " + profileInfo.role}
+                  {/* {"Role : " + profileInfo.role} */}
                 </h1>
               )}
             </m.div>
           </>
         ) : null}
 
-        {isOpen && isAuthenticated ? (
-          <>
-            {/* <m.div
-animate={{
-width: isAuthenticated && isOpen ? "34%" : "-20px ",
-transition: {
-duration: 0.5,
-type: "spring",
-damping: 15,
-},
-}}
-className="fixed right-48 text-red-400 -top-20 mr-4 mt-24 z-50 h-[65%] md:h-[70%] lg:h-[70%] text-sm rounded-br-md items-center justify-center justify-items-center"
-> */}
-
-            {/* </m.div> */}
-          </>
-        ) : null}
+     
       </m.div>
 
       <m.div

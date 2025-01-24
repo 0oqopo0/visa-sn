@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { motion as m } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.min.css";
-// swiper core styles
-import "swiper/swiper.min.css";
-// modules styles
-import "swiper/components/navigation/navigation.min.css";
-import "swiper/components/pagination/pagination.min.css";
-import { Autoplay } from "swiper";
+
 
 import { Link, NavLink } from "react-router-dom";
 import {
@@ -20,7 +13,7 @@ import { MdOutlineWbIncandescent } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
 
 
-import { EffectCoverflow, Pagination, Navigation } from 'swiper';
+
 
 import slide_image_1 from '../images/img_1.jpg';
 import slide_image_2 from '../images/img_2.jpg';

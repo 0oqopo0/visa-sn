@@ -75,7 +75,7 @@ const handleSubmit = async (e) => {
         title: "موفقیت",
         text: "کاربر با موفقیت به‌روزرسانی شد.",
         icon: "success",
-        confirmButtonText: "باشه",
+        confirmButtonText: "متوجه شدم ",
         timer: 5000,
         timerProgressBar: true,
         willOpen: () => {
@@ -89,7 +89,7 @@ const handleSubmit = async (e) => {
         title: "ناموفق",
         text: "ایمیل تکراری است.",
         icon: "error",
-        confirmButtonText: "باشه",
+        confirmButtonText: "متوجه شدم ",
         timer: 5000,
         timerProgressBar: true,
         willOpen: () => {
@@ -103,7 +103,7 @@ const handleSubmit = async (e) => {
         title: "خطا",
         text: "کاربر موردنظر پیدا نشد.",
         icon: "error",
-        confirmButtonText: "باشه",
+        confirmButtonText: "متوجه شدم ",
         timer: 5000,
         timerProgressBar: true,
         willOpen: () => {
@@ -117,7 +117,7 @@ const handleSubmit = async (e) => {
         title: "خطا",
         text: "هیچ نقش معتبری پیدا نشد.",
         icon: "error",
-        confirmButtonText: "باشه",
+        confirmButtonText: "متوجه شدم ",
         timer: 5000,
         timerProgressBar: true,
         willOpen: () => {
@@ -131,7 +131,7 @@ const handleSubmit = async (e) => {
         title: "خطا",
         text: "هیچ نقشی برای کاربر انتخاب نشده است.",
         icon: "error",
-        confirmButtonText: "باشه",
+        confirmButtonText: "متوجه شدم ",
         timer: 5000,
         timerProgressBar: true,
         willOpen: () => {
@@ -146,7 +146,7 @@ const handleSubmit = async (e) => {
         title: "خطای نامشخص",
         text: "خطای غیرمنتظره‌ای رخ داد.",
         icon: "error",
-        confirmButtonText: "باشه",
+        confirmButtonText: "متوجه شدم ",
         timer: 5000,
         timerProgressBar: true,
         willOpen: () => {
@@ -162,7 +162,7 @@ const handleSubmit = async (e) => {
       title: "خطا",
       text: "مشکلی در ارسال درخواست رخ داد. لطفاً دوباره امتحان کنید.",
       icon: "error",
-      confirmButtonText: "باشه",
+      confirmButtonText: "متوجه شدم ",
       timer: 5000,
       timerProgressBar: true,
       willOpen: () => {
@@ -220,7 +220,7 @@ const handleSubmit = async (e) => {
               onChange={handleInputChange}
               className="w-full px-3 py-2 border rounded"
             >
-              <option value="">انتخاب نقش</option>
+              {/* <option value="">انتخاب نقش</option> */}
               {roles.map((role) => (
                 <option key={role.id} value={role.roleCodeEng}>
                   {role.roleCodePer} {/* نمایش نام فارسی نقش */}

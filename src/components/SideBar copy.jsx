@@ -208,7 +208,7 @@ const SideBar = ({ children }) => {
         {/* <div className=""> */}
         <motion.div
           animate={{
-            width: isOpen ? "50%" : "0%",
+            width: isOpen ? "50%" : "0px",
 
             // overflow: isOpen ? "" : "hidden",
 
@@ -241,7 +241,7 @@ const SideBar = ({ children }) => {
 
               <div
                 animate={{
-                  width: isOpen ? "75%" : "0%",
+                  width: isOpen ? "45%" : "0px",
 
                   // overflow: isOpen ? "" : "hidden",
 
@@ -254,8 +254,8 @@ const SideBar = ({ children }) => {
                 // className="fixed right-[50%] z-50 ml-4 mt-2 mb-2 mr-2 text-sm rounded-full bg-sky-500/90  hover:bg-gray-500/60 p-3  dark:text-red-600 "
                 className={`fixed  z-50 ml-4 mt-2 mb-2 mr-2 text-sm rounded-l-lg hover:bg-gray-500/60 p-1 dark:text-red-600 ${
                   isOpen
-                    ? "  bg-green-300/60 right-[50%]"
-                    : " bg-red-400/60 right-[0%]"
+                    ? "  bg-green-300/60 right-[49.6%]"
+                    : " bg-sky-400/60 right-[-0%]"
                 }`}
                 onClick={(event) => {
                   // setSearchTerm(event.target.value);
@@ -395,7 +395,7 @@ const SideBar = ({ children }) => {
                           to={`/${val.eName}`}
                           key={val.eName}
                           onClick={(event) => {
-                            // handleDropDown();
+                            handleDropDown();
                             handleMobileMenu();
                           }}
                           // className="w-full bg-red-400/80 dark:bg-slate-800 text-black dark:green-red-800  text-2xl hover:bg-green-300/10   dark:hover:bg-green-800/70 flex items-center justify-between gap-3 text-md p-2  transition ease-in-out delay-3  hover:-translate-y-.5 hover:scale-100  rounded-sm border-b-1 border-b-yellow-800 "

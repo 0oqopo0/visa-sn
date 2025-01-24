@@ -8,6 +8,7 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 // ///////////////////////////////////////////
 import UserService from "./service/UserService";
 import LoginPage from "./auth/LoginPage";
+import GeonamesList from "./components/GeonamesList";
 import RegistrationPage from "./auth/RegistrationPage";
 import Registration from "./auth/Registration";
 import UpdateUser from "./userspage/UpdateUser";
@@ -341,9 +342,11 @@ const App = () => {
                   <Route path="/profile" element={<ProfilePage />} />
                   <Route path="/Registration" element={<Registration />} />
                   <Route path="/register" element={<RegistrationPage />} />
+                    <Route path="/GeonamesList" element={<GeonamesList />} />
+                  
                   {UserService.adminOnly() && (
                     // {(
-                    <>
+                      <>
                       <Route path="/register" element={<RegistrationPage />} />
                       <Route
                         path="/admin/user-management"

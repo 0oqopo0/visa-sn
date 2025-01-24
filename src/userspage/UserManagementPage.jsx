@@ -13,6 +13,8 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import moment from "moment-jalaali"; // استفاده از moment-jalaali به جای moment
 import { Button } from "@mui/material";
 import { useStateContext } from "../contexts/ContextProvider";
+import { FaGlobe } from 'react-icons/fa';
+
 ////////////////////////////////////////////////////////////////////
 
 function UserManagementPage() {
@@ -236,10 +238,21 @@ const gridEvenRowColor = applyOpacity(
 
         <Link
           to="/register"
-          className="flex bg-sky-500 bg-opacity-90 backdrop-filter backdrop-blur-lg text-black px-4 py-2 rounded hover:bg-blue-600 transition duration-300 mb-2"
+          className="flex bg-sky-500 bg-opacity-90 backdrop-filter backdrop-blur-lg text-black px-4 py-2 rounded hover:bg-red-600 transition duration-300 mb-2"
         >
           Add User
         </Link>
+
+
+            {/* دکمه برای Geonames */}
+            <Link to="/GeonamesList" style={{ textDecoration: 'none' }}
+            className="flex bg-sky-500 bg-opacity-90 backdrop-filter backdrop-blur-lg text-black px-4 py-2 rounded hover:bg-red-600 transition duration-300 mb-2"
+            >
+                <button style={{ display: 'flex', alignItems: 'center' }}>
+                    <FaGlobe style={{ marginRight: '5px' }} />
+                    Geonames
+                </button>
+            </Link>
         <div style={{ height: 600, width: "100%" }}>
     
 

@@ -7,14 +7,14 @@ import sunrise from "../Pool/Videos/sunrise.mp4";
 import { Link, NavLink } from "react-router-dom";
 
 // swiper bundle styles
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.min.css";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/swiper-bundle.min.css";
 // swiper core styles
-import "swiper/swiper.min.css";
+// import "swiper/swiper.min.css";
 
 // modules styles
-import "swiper/components/navigation/navigation.min.css";
-import "swiper/components/pagination/pagination.min.css";
+// import "swiper/components/navigation/navigation.min.css";
+// import "swiper/components/pagination/pagination.min.css";
 import nature_105936_720p from "../Pool/Videos/nature_105936_720p.mp4";
 import Nature_159101 from "../Pool/Videos/Nature_159101.mp4";
 

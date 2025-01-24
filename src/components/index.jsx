@@ -10,5 +10,6 @@ export { default as Contact } from './Contact';
 export { default as ImageGallary } from './ImageGallary';
 export { default as SideBar } from './SideBar';
 export { default as SideBarSubItem } from './SideBarSubItem';
+export { default as GeonamesList } from './GeonamesList';
 
 
