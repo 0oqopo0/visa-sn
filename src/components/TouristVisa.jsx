@@ -21,8 +21,8 @@ const TouristVisa = () => {
 
   return (
     <div
-       onMouseEnter={handleMouseEnter}
-       onMouseLeave={handleMouseLeave}
+      //  onMouseEnter={handleMouseEnter}
+      //  onMouseLeave={handleMouseLeave}
        onClick={handleClick}
     >
       <button className="text-xl font-BMehrBold.ttf flex w-60 justify-between items-center   hover:text-gray-300  hover:bg-black/80 hover:rounded-tl-lg hover:rounded-tr-lg text-black  dark:text-yellow-500 p-4 hover:border-b-1 hover:border-b-yellow-800  hover:bg-sky-800/40 ">

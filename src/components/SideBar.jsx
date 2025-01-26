@@ -20,7 +20,7 @@ import { motion as m } from "framer-motion";
 // //////////////////////////////////////////////////////////
 import UserAccess from "./UserAccess";
 import moment from "moment-jalaali";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import { Link } from "react-router-dom";
 // //////////////////////////////////////////////////////////

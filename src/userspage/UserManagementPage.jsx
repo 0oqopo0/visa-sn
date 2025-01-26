@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import UserService from "../service/UserService";
@@ -220,7 +218,7 @@ const gridEvenRowColor = applyOpacity(
         backgroundImage: `url(${UserManagementPageC})`,
       }}
     >
-      <ToastContainer />
+
       <motion.div
         // className="flex fixed w-full font-semibold justify-between items-center bg-[#EEEDDE]/90 dark:bg-[#2C3333]/80 z-30 h-24 border-solid border-b-1 border-black shadow-[inset_0_5px_26px_rgba(0,0,0,0.6)]"
         // className="relative bg-[#e42929] dark:bg-[#2C3333]/80 bg-opacity-30 backdrop-filter backdrop-blur-lg  rounded shadow-md w-11/12 border border-sky-400 mt-32  m-20 p-2"
@@ -260,7 +258,7 @@ const gridEvenRowColor = applyOpacity(
   rows={rows}
   columns={columns}
   pageSize={recordsPerPage}
-  rowsPerPageOptions={[10, 20, 50]}
+  rowsPerPageOptions={[5, 10, 20]} // اضافه کردن 5 به گزینه‌ها
   pagination
   onPageChange={(params) => setCurrentPage(params.page + 1)}
   localeText={localeTextFa}

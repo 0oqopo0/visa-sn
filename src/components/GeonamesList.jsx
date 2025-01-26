@@ -5,34 +5,33 @@ import {
   Grid,
   Card,
   CardHeader,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  TableContainer,
   Divider,
+  TextField,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { FaArrowRight, FaArrowLeft, FaSave } from "react-icons/fa";
 import GeoNamesService from "../service/GeoNamesService";
 
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 const GeonamesList = () => {
   const [sourceRows, setSourceRows] = useState([]);
   const [destinationRows, setDestinationRows] = useState([]);
   const [checkedSource, setCheckedSource] = useState([]);
   const [checkedDestination, setCheckedDestination] = useState([]);
+  const [sourcePage, setSourcePage] = useState(1);
+  const [destinationPage, setDestinationPage] = useState(1);
+  const [rowsPerPage] = useState(5);
+  const [globalFilter, setGlobalFilter] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await GeoNamesService.fetchGeoNames("api");
-        console.log("Fetched Data:", data);
-
         if (data && Array.isArray(data)) {
           const formattedData = data.map((item) => ({
+            id: item.geonameId,
             geonameId: item.geonameId,
-            toponymName: item.toponymName || "Unknown",
+            toponymName: item.toponymName || "ناشناس",
             countryId: item.countryId || "N/A",
             countryCode: item.countryCode || "N/A",
             fcodeName: item.fcodeName || "N/A",
@@ -47,168 +46,284 @@ const GeonamesList = () => {
         console.error("Error fetching data:", error);
       }
     };
-
     fetchData();
   }, []);
 
   const handleToggleSource = (id) => () => {
-    const currentIndex = checkedSource.indexOf(id);
-    const newChecked = [...checkedSource];
-
-    if (currentIndex === -1) {
-      newChecked.push(id);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
+    const newChecked = checkedSource.includes(id)
+      ? checkedSource.filter((item) => item !== id)
+      : [...checkedSource, id];
     setCheckedSource(newChecked);
   };
 
   const handleToggleDestination = (id) => () => {
-    const currentIndex = checkedDestination.indexOf(id);
-    const newChecked = [...checkedDestination];
-
-    if (currentIndex === -1) {
-      newChecked.push(id);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
+    const newChecked = checkedDestination.includes(id)
+      ? checkedDestination.filter((item) => item !== id)
+      : [...checkedDestination, id];
     setCheckedDestination(newChecked);
   };
 
+  const handleSelectAllSource = () => {
+    if (checkedSource.length === sourceRows.length) {
+      setCheckedSource([]);
+    } else {
+      setCheckedSource(sourceRows.map((row) => row.id));
+    }
+  };
+
+  const handleSelectAllDestination = () => {
+    if (checkedDestination.length === destinationRows.length) {
+      setCheckedDestination([]);
+    } else {
+      setCheckedDestination(destinationRows.map((row) => row.id));
+    }
+  };
+
+  const handleSelectPageSource = () => {
+    setCheckedSource(
+      sourceRows
+        .slice((sourcePage - 1) * rowsPerPage, sourcePage * rowsPerPage)
+        .map((row) => row.id)
+    );
+  };
+
+  const handleSelectPageDestination = () => {
+    setCheckedDestination(
+      destinationRows
+        .slice(
+          (destinationPage - 1) * rowsPerPage,
+          destinationPage * rowsPerPage
+        )
+        .map((row) => row.id)
+    );
+  };
+
   const handleTransferToDestination = () => {
-    const selectedRows = sourceRows.filter((row) => checkedSource.includes(row.geonameId));
+    const selectedRows = sourceRows.filter((row) =>
+      checkedSource.includes(row.id)
+    );
     setDestinationRows([...destinationRows, ...selectedRows]);
-    setSourceRows(sourceRows.filter((row) => !checkedSource.includes(row.geonameId)));
+    setSourceRows(sourceRows.filter((row) => !checkedSource.includes(row.id)));
     setCheckedSource([]);
   };
 
   const handleTransferToSource = () => {
-    const selectedRows = destinationRows.filter((row) => checkedDestination.includes(row.geonameId));
+    const selectedRows = destinationRows.filter((row) =>
+      checkedDestination.includes(row.id)
+    );
     setSourceRows([...sourceRows, ...selectedRows]);
-    setDestinationRows(destinationRows.filter((row) => !checkedDestination.includes(row.geonameId)));
+    setDestinationRows(
+      destinationRows.filter((row) => !checkedDestination.includes(row.id))
+    );
     setCheckedDestination([]);
   };
 
-  const customTable = (title, rows = [], checked = [], handleToggle) => (
-    <Card>
-      <CardHeader
-        sx={{ px: 2, py: 1 }}
-        title={title}
-        subheader={`${checked.length}/${rows.length} selected`}
-      />
-      <Divider />
-      <TableContainer>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Select</TableCell>
-              <TableCell>Geoname ID</TableCell>
-              <TableCell>Toponym Name</TableCell>
-              <TableCell>Country ID</TableCell>
-              <TableCell>Country Code</TableCell>
-              <TableCell>Fcode Name</TableCell>
-              <TableCell>Longitude</TableCell>
-              <TableCell>Latitude</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows && rows.length > 0 ? (
-              rows.map((row) => (
-                <TableRow
-                  key={row.geonameId}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                  hover
-                  onClick={handleToggle(row.geonameId)}
+  const handlePageChange = (type, page) => {
+    if (type === "source") setSourcePage(page);
+    if (type === "destination") setDestinationPage(page);
+  };
+
+  const filteredRows = (rows, filter) => {
+    return rows.filter((row) =>
+      Object.values(row).some((value) =>
+        value.toString().toLowerCase().includes(filter.toLowerCase())
+      )
+    );
+  };
+
+  const localeTextFa = {
+    noRowsLabel: "اطلاعاتی موجود نیست",
+    columnMenuSortAsc: "مرتب‌سازی صعودی",
+    columnMenuSortDesc: "مرتب‌سازی نزولی",
+    columnMenuFilter: "فیلتر",
+    columnMenuHideColumn: "مخفی کردن ستون",
+    columnMenuShowColumns: "نمایش ستون‌ها",
+    columnMenuManageColumns: "مدیریت ستــون ها",
+    columnMenuUnsort: "بازگشت به حالت قبل",
+    TooltipLableValue: "مدیریت ها",
+  };
+
+  // ////////////////////////////////
+
+  const columns = [
+    { field: "geonameId", headerName: "شناسه جغرافیایی", width: 150 },
+    { field: "toponymName", headerName: "نام مکان", width: 180 },
+    { field: "countryId", headerName: "کد کشور", width: 120 },
+    { field: "countryCode", headerName: "کد منطقه", width: 140 },
+    { field: "fcodeName", headerName: "نام نوع مکان", width: 160 },
+    { field: "lng", headerName: "طول جغرافیایی", width: 140 },
+    { field: "lat", headerName: "عرض جغرافیایی", width: 140 },
+  ];
+
+  const customTable = (
+    title,
+    rows,
+    checked,
+    handleToggle,
+    handleSelectAll,
+    page,
+    type,
+    handleSelectPage
+  ) => (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <Card sx={{ bgcolor: "red", color: "blue", direction: "rtl" }}>
+        <CardHeader
+          sx={{ px: 2, py: 1, bgcolor: "gray", color: "blue" }}
+          title={title}
+          subheader={`${checked.length}/${rows.length} انتخاب شده`}
+        />
+        <Divider sx={{ bgcolor: "yellow" }} />
+        <div style={{ height: 400, width: "100%" }}>
+          <Grid
+            container
+            className="flex bg-red-400 rounded-sm border-1 border-black justify-strat p-2 font-nazanin font-b gap-2"
+          >
+            <Grid item>
+              <div className="flex bg-sky-400 rounded-sm border-1 border-black ">
+                <Button onClick={handleSelectPage}>انتخاب تمامی صفحه</Button>
+              </div>
+            </Grid>
+            <Grid item>
+              <div className="flex bg-green-400 rounded-sm border-1 border-green-300 font-nazanin">
+                <Button
+                  // variant="outlined"
+                  // color="primary"
+                  onClick={handleSelectAll}
                 >
-                  <TableCell padding="checkbox">
-                    <Checkbox checked={checked.includes(row.geonameId)} />
-                  </TableCell>
-                  <TableCell>{row.geonameId}</TableCell>
-                  <TableCell>{row.toponymName}</TableCell>
-                  <TableCell>{row.countryId}</TableCell>
-                  <TableCell>{row.countryCode}</TableCell>
-                  <TableCell>{row.fcodeName}</TableCell>
-                  <TableCell>{row.lng}</TableCell>
-                  <TableCell>{row.lat}</TableCell>
-                </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell colSpan={8} align="center">
-                  No data available
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Card>
+                  انتخاب تمامی رکوردها
+                </Button>
+              </div>
+            </Grid>
+          </Grid>
+          <DataGrid
+            rows={filteredRows(rows, globalFilter)}
+            columns={columns}
+            pageSize={rowsPerPage}
+            localeText={localeTextFa}
+            rowsPerPageOptions={[5, 10, 20]} // اضافه کردن 5 به گزینه‌ها
+            checkboxSelection
+            disableSelectionOnClick
+            onSelectionModelChange={(newSelection) => {
+              if (type === "source") setCheckedSource(newSelection);
+              else setCheckedDestination(newSelection);
+            }}
+            components={{
+              Toolbar: GridToolbar,
+            }}
+            selectionModel={checked}
+            sx={{
+              bgcolor: "#43794e",
+              fontFamily: "Vazir, sans-serif",
+              "& .MuiDataGrid-row:nth-of-type(odd)": {
+                backgroundColor: "white",
+              },
+              "& .MuiDataGrid-row:nth-of-type(even)": {
+                backgroundColor: "#79C7FF",
+              },
+            }}
+          />
+        </div>
+      </Card>
+    </motion.div>
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gradient-to-r from-black via-green-500 via-yellow-500 via-blue-500 to-black">
+    <motion.div
+      className="flex flex-col items-center justify-center min-h-8 px-24  bg-[#3f93b9] font-nazanin"
+      // className="flex flex-col items-center justify-center min-h-8 px-24  bg-[#43794e] font-nazanin"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <motion.h1
-        className="text-4xl font-bold text-white mb-6 mt-28"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        
+        className="text-4xl font-bold mb-6 mt-28"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
       >
-        Dual Grid Transfer with Animation
+        مدیریت اطلاعات جغرافیایی
       </motion.h1>
 
-      <motion.div
-        className="w-full max-w-4xl mb-6"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className="text-xl font-semibold text-white mb-4 text-center">
-          Source Grid
-        </h2>
-        {customTable("Source Locations", sourceRows, checkedSource, handleToggleSource)}
-      </motion.div>
+      <TextField
+        fullWidth
+        label="جستجوی کلی"
+        variant="outlined"
+        margin="normal"
+        value={globalFilter}
+        onChange={(e) => setGlobalFilter(e.target.value)}
+        className="bg-sky-400 rtl text-right"
+        sx={{
+          bgcolor: "#00BFFF",
+          color: "green",
+          direction: "rtl",
+        }}
+        InputLabelProps={{
+          style: { textAlign: "right" }, // راست‌چین کردن لیبل
+        }}
+        InputProps={{
+          style: { textAlign: "right" }, // راست‌چین کردن ورودی
+        }}
+      />
 
-      <motion.div
-        className="flex gap-4 mb-6"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
+      <Grid container spacing={2} direction="column">
+        <Grid item xs={12}>
+          {customTable(
+            "مکان‌های منبع",
+            sourceRows,
+            checkedSource,
+            handleToggleSource,
+            handleSelectAllSource,
+            sourcePage,
+            "source",
+            handleSelectPageSource
+          )}
+        </Grid>
+        <div className="mt-4 flex justify-center">
+          <Button
+            onClick={handleTransferToDestination}
+            variant="contained"
+            color="primary"
+            sx={{ marginRight: 2, fontFamily: "Vazir, sans-serif" }}
+          >
+            انتقال به مقصد <FaArrowRight />
+          </Button>
+          <Button
+            onClick={handleTransferToSource}
+            variant="contained"
+            color="secondary"
+          >
+            انتقال به منبع <FaArrowLeft />
+          </Button>
+        </div>
+        <Grid item xs={12}>
+          {customTable(
+            "مکان‌های مقصد",
+            destinationRows,
+            checkedDestination,
+            handleToggleDestination,
+            handleSelectAllDestination,
+            destinationPage,
+            "destination",
+            handleSelectPageDestination
+          )}
+        </Grid>
+      </Grid>
+
+      <div className="mt-4">
         <Button
           variant="contained"
-          color="primary"
-          onClick={handleTransferToDestination}
-          disabled={checkedSource.length === 0}
-          startIcon={<FaArrowRight />}
+          color="success"
+          startIcon={<FaSave />}
+          onClick={() => alert("اطلاعات ذخیره شد!")}
         >
-          Transfer to Destination
+          ذخیره اطلاعات
         </Button>
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={handleTransferToSource}
-          disabled={checkedDestination.length === 0}
-          startIcon={<FaArrowLeft />}
-        >
-          Transfer to Source
-        </Button>
-      </motion.div>
-
-      <motion.div
-        className="w-full max-w-4xl"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className="text-xl font-semibold text-white mb-4 text-center">
-          Destination Grid
-        </h2>
-        {customTable("Destination Locations", destinationRows, checkedDestination, handleToggleDestination)}
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   );
 };
 

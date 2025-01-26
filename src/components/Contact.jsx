@@ -35,7 +35,7 @@ const Contact = () => {
   return (
     <div
       className=""
-      onMouseEnter={handleMouseEnter}
+      // onMouseEnter={handleMouseEnter}
       //  onMouseLeave={handleMouseLeave}
       onClick={handleClick}
     >

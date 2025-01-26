@@ -15,23 +15,26 @@ class GeoNamesService {
     }
   }
 
-  // متدی برای دریافت داده مستقیم از API خارجی
-  static async fetchGeoNamesFromAPI() {
-    try {
-      const response = await axios.get(this.API_URL, {
-        params: {
-          q: 'tehran', // جستجوی تهران
-          maxRows: 10, // تعداد نتایج
-          username: 'miladsh', // نام کاربری
-        },
-      });
+// متدی برای دریافت داده مستقیم از API خارجی
+static async fetchGeoNamesFromAPI() {
+  try {
+    const response = await axios.get(this.API_URL, {
+      params: {
+        q: 'iran', // جستجوی ایران
+        maxRows: 1000, // تعداد نتایج
+        username: 'miladsh', // نام کاربری
+        featureCode: 'ADM1', // فقط استان‌ها
+        country: 'IR', // کد کشور ایران
+      },
+    });
 
-      return response.data.geonames; // داده‌های دریافتی از API خارجی
-    } catch (error) {
-      console.error('Error fetching GeoNames data from API:', error);
-      throw error;
-    }
+    return response.data.geonames; // داده‌های دریافتی از API خارجی
+  } catch (error) {
+    console.error('Error fetching GeoNames data from API:', error);
+    throw error;
   }
+}
+
 
   // متدی برای مدیریت تغییر بین بک‌اند و API
   static async fetchGeoNames(source = 'backend') {

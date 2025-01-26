@@ -17,8 +17,6 @@ import { useStateContext } from "../contexts/ContextProvider";
 import moment from "moment-jalaali";
 import UserService from "../service/UserService";
 import LoginPage from "../auth/LoginPage";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import "react-confirm-alert/src/react-confirm-alert.css"; // استایلهای پیشفرض
 import { confirmAlert } from "react-confirm-alert";
 // //////////////////////////////////////////////////////////

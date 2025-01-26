@@ -23,8 +23,8 @@ const EmbassyAppointmentDD = () => {
   return (
     <div
       className=""
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      // onMouseEnter={handleMouseEnter}
+      // onMouseLeave={handleMouseLeave}
       onClick={handleClick}
     >
       {/* className="relative text-2xl rounded-full bg-gray-500/30 hover:bg-gray-500/60 p-3 m-2 dark:text-green-600" */}

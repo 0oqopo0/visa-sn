@@ -9,6 +9,7 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import UserService from "./service/UserService";
 import LoginPage from "./auth/LoginPage";
 import GeonamesList from "./components/GeonamesList";
+import LocationHierarchy from "./components/LocationHierarchy";
 import RegistrationPage from "./auth/RegistrationPage";
 import Registration from "./auth/Registration";
 import UpdateUser from "./userspage/UpdateUser";
@@ -246,7 +247,6 @@ const App = () => {
               // onMouseEnter={handelContact}
               onClick={function (event) {
                 handelContact();
-                
               }}
             >
               {contact ? (
@@ -342,11 +342,15 @@ const App = () => {
                   <Route path="/profile" element={<ProfilePage />} />
                   <Route path="/Registration" element={<Registration />} />
                   <Route path="/register" element={<RegistrationPage />} />
-                    <Route path="/GeonamesList" element={<GeonamesList />} />
-                  
+                  <Route path="/GeonamesList" element={<GeonamesList />} />
+                  <Route
+                    path="/LocationHierarchy"
+                    element={<LocationHierarchy />}
+                  />
+
                   {UserService.adminOnly() && (
                     // {(
-                      <>
+                    <>
                       <Route path="/register" element={<RegistrationPage />} />
                       <Route
                         path="/admin/user-management"

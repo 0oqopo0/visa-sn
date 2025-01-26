@@ -15,8 +15,8 @@ import {
 import { motion as m } from "framer-motion";
 import moment from "moment-jalaali";
 import UserService from "../service/UserService";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import { confirmAlert } from "react-confirm-alert";
 
@@ -304,7 +304,7 @@ const Navbar = () => {
               className="hidden"
               onChange={setMode}
               checked={currentMode === "Dark"}
-              onMouseEnter={currentMode === "Dark"}
+              // onMouseEnter={currentMode === "Dark"}
             />
             <label
               htmlFor="dark"
@@ -327,7 +327,7 @@ const Navbar = () => {
               className="hidden"
               onChange={setMode}
               checked={currentMode === "Light"}
-              onMouseEnter={currentMode === "Light"}
+              // onMouseEnter={currentMode === "Light"}
             />
             <label
               htmlFor="light"
